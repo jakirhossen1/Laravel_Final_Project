@@ -94,7 +94,7 @@
 <a href="grouptype" class="nk-menu-link"><span class="nk-menu-text">Add Group</span></a>
 </li>
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Ledger Group</span></a>
+<a href="ledgergroup" class="nk-menu-link"><span class="nk-menu-text">Ledger Group</span></a>
 </li>
 <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Ledger Sub Group</span></a>

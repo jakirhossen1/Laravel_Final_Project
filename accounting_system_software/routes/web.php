@@ -10,6 +10,7 @@ use App\Http\Controllers\AddCountryController;
 use App\Http\Controllers\AddBusinessTypeController;
 use App\Http\Controllers\AddCompanyTypeController;
 use App\Http\Controllers\AddGroupController;
+use App\Http\Controllers\AddLedgerGroupController;
 
 /*
 |--------------------------------------------------------------------------
@@ -101,3 +102,16 @@ Route::get('grouptype_update_form',[AddGroupController::class,'update_form']);
 Route::post('grouptype_update',[AddGroupController::class,'update']);
 
 // End AddGroupController 
+
+
+//Start AddLedgerGroupController 
+
+Route::get('ledgergroup',[AddLedgerGroupController::class,'viewd']);
+// Route::get('ledgergroup_pdf',[AddLedgerGroupController::class,'pdf']);
+// Route::get('ledgergroup_print',[AddLedgerGroupController::class,'print']);
+Route::post('ledgergroup_save',[AddLedgerGroupController::class,'save']);
+Route::post('ledgergroup_del',[AddLedgerGroupController::class,'destroy']);
+Route::get('ledgergroup_update_form',[AddLedgerGroupController::class,'update_form']);
+Route::post('ledgergroup_update',[AddLedgerGroupController::class,'update']);
+
+// End AddLedgerGroupController 
