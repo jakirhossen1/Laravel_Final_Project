@@ -73,6 +73,11 @@ public function save(Request $request){
 }
 
 public function destroy(Request $request){
+<<<<<<< Updated upstream
+=======
+    dd($request->post('user_id'));
+    exit();
+>>>>>>> Stashed changes
    $id=$request->post('user_id'); 
    $data= UsersModel::where('user_id','=',$id)->first();
    $data->delete();

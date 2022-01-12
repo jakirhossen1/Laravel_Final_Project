@@ -56,7 +56,11 @@
 </a>
 <ul class="nk-menu-sub">
     <li class="nk-menu-item">
+<<<<<<< Updated upstream
 <a href="#" class="nk-menu-link"><span class="nk-menu-text">Add Country</span></a>
+=======
+<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Add Country</span></a>
+>>>>>>> Stashed changes
 </li>
 <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Add Business Type</span></a>

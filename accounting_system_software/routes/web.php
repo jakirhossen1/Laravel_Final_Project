@@ -6,7 +6,10 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
+<<<<<<< Updated upstream
 use App\Http\Controllers\AddCountryController;
+=======
+>>>>>>> Stashed changes
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,8 +23,11 @@ use App\Http\Controllers\AddCountryController;
 
 Route::get('/',[UserController::class,'viewd']);
 
+<<<<<<< Updated upstream
 //Start UserController
 
+=======
+>>>>>>> Stashed changes
 Route::get('us',[UserController::class,'viewd']);
 Route::get('us_pdf',[UserController::class,'pdf']);
 Route::get('us_print',[UserController::class,'print']);
@@ -30,15 +36,19 @@ Route::post('us_del',[UserController::class,'destroy']);
 Route::get('us_update_form',[UserController::class,'update_form']);
 Route::post('us_update',[UserController::class,'update']);
 
+<<<<<<< Updated upstream
 //End UserController
 
 
 // Start LoginController
 
+=======
+>>>>>>> Stashed changes
 Route::get('login',[LoginController::class,'viewd']);
 Route::post('authen',[LoginController::class,'authentiation']);
 Route::get('lout',[LoginController::class,'logout']);
 
+<<<<<<< Updated upstream
 // Start LoginController
 
 //Start AddCountryController 
@@ -52,3 +62,8 @@ Route::get('country_update_form',[AddCountryController::class,'update_form']);
 Route::post('country_update',[AddCountryController::class,'update']);
 
 // End AddCountryController 
+=======
+
+
+
+>>>>>>> Stashed changes
