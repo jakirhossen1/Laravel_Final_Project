@@ -10,6 +10,6 @@
                     <div class="row">
                         <div class="col-md-12">
                                <label>Ledger Name</label>
-                               <input type="text" class="form-control" name="full_name" id="full_name" value="<?php echo $qr['ledger_name ']?>" />
+                               <input type="text" class="form-control" name="ledger_name" id="ledger_name" value="<?php echo $qr['ledger_name ']?>" />
                          </div>
                      </div>

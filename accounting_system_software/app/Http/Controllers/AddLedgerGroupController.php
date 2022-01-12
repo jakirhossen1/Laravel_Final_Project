@@ -65,7 +65,6 @@ public function update_form(Request $request){
     $data= AddLedgerGroupModel::where('ledger_id','=',$id)->first();
     $data->ledger_id=$request->ledger_id;
     $data->ledger_name=$request->ledger_name;
-    $data->ledger_parent_id=$request->ledger_parent_id;
     $data->group_id=$request->group_id;
     $data->save();
 
