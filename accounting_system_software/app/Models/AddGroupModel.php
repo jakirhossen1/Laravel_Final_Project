@@ -3,12 +3,13 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class DivisionModel extends Model{
-    public $table="division";
+class AddGroupModel extends Model{
+    public $table="group_type";
     public $timestamps=false;
     protected $primaryKey = 'id';
     protected $fillable=[
-        'division_name',
+        'group_type_name',
+        'debit_credit',
         '_token',
         
     ];

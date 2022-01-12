@@ -18,7 +18,7 @@ public function viewd(){
     echo view('header.header',$vi);
     echo view('sidebar.sidebar');
     echo view('dashboard.submain');
-    echo view('users.view',$vi);
+    echo view('users.AddUser',$vi);
     echo view('footer.footer');
 }
 
@@ -73,22 +73,18 @@ public function save(Request $request){
 }
 
 public function destroy(Request $request){
-<<<<<<< Updated upstream
-=======
-    dd($request->post('user_id'));
-    exit();
->>>>>>> Stashed changes
-   $id=$request->post('user_id'); 
+   $id=$request->post('id');
+   // dd($id); 
    $data= UsersModel::where('user_id','=',$id)->first();
    $data->delete();
    }
-   public function update_form(Request $request){
+public function update_form(Request $request){
       $id=$request->id;
       $data['qr']= UsersModel::where('user_id','=',$id)->first();
       echo view('users.update',$data);
    
    }
-   public function update(Request $request){
+public function update(Request $request){
      $id=$request->user_id;
    if($request->file('picture')){
         $img=$request->file('picture');

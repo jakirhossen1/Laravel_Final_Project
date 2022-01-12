@@ -2,30 +2,30 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\AddCountryModel;
+use App\Models\AddGroupModel;
 use DB;
 use PDF;
 
-class AddCountryController extends Controller{
+class AddGroupController extends Controller{
    private $title="Accounting Software";
 
 
 public function viewd(){
     
     $vi['title']=$this->title;
-    $vi['qr']= AddCountryModel::get();
+    $vi['qr']= AddGroupModel::get();
     
     echo view('header.header',$vi);
     echo view('sidebar.sidebar');
     echo view('dashboard.submain');
-    echo view('AddCountry.AddCountry',$vi);
+    echo view('AddGroup.AddGroup',$vi);
     echo view('footer.footer');
 }
 
 // public function pdf(){
     
 //     $vi['title']=$this->title;
-//     $vi['qr']= AddCountryModel::get();
+//     $vi['qr']= AddGroupModel::get();
     
 
 // $pdf = PDF::loadView('users.pdf', $vi);
@@ -35,7 +35,7 @@ public function viewd(){
 // public function print(){
     
 //     $vi['title']=$this->title;
-//     $vi['qr']= AddCountryModel::get();
+//     $vi['qr']= AddGroupModel::get();
     
 
 //     echo view('users.print',$vi);
@@ -44,28 +44,28 @@ public function viewd(){
 
 public function save(Request $request){
     $data=$request->all();
-    AddCountryModel::create($data);
+    AddGroupModel::create($data);
 
 }
 
 public function destroy(Request $request){
    $id=$request->post('id'); 
-   $data= AddCountryModel::find($id);
+   $data= AddGroupModel::find($id);
    $data->delete();
    }
 public function update_form(Request $request){
       $id=$request->id;
-      $data['qr']= AddCountryModel::find($id);
-      echo view('AddCountry.UpdateCountry',$data);
+      $data['qr']= AddGroupModel::find($id);
+      echo view('AddGroup.UpdateGroup',$data);
    
    }   
  public function update(Request $request){
     $id=$request->id;
     
-    $data= AddCountryModel::find($id);
+    $data= AddGroupModel::find($id);
     $data->id=$request->id;
-    $data->city_name=$request->city_name;
-    $data->country_name=$request->country_name;
+    $data->group_type_name=$request->group_type_name;
+    $data->debit_credit=$request->debit_credit;
     $data->save();
 
 }

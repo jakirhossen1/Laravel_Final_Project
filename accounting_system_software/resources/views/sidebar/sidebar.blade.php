@@ -55,18 +55,14 @@
 <span class="nk-menu-text">Initial Setup</span>
 </a>
 <ul class="nk-menu-sub">
-    <li class="nk-menu-item">
-<<<<<<< Updated upstream
-<a href="#" class="nk-menu-link"><span class="nk-menu-text">Add Country</span></a>
-=======
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Add Country</span></a>
->>>>>>> Stashed changes
+<li class="nk-menu-item">
+<a href="country" class="nk-menu-link"><span class="nk-menu-text">Add Country</span></a>
 </li>
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Add Business Type</span></a>
+<a href="business" class="nk-menu-link"><span class="nk-menu-text">Add Business Type</span></a>
 </li>
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Add Company Type</span></a>
+<a href="companytype" class="nk-menu-link"><span class="nk-menu-text">Add Company Type</span></a>
 </li>
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
@@ -95,7 +91,7 @@
 </a>
 <ul class="nk-menu-sub">
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Add Group</span></a>
+<a href="grouptype" class="nk-menu-link"><span class="nk-menu-text">Add Group</span></a>
 </li>
 <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Ledger Group</span></a>

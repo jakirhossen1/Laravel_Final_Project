@@ -3,14 +3,12 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class DistrictModel extends Model{
-    public $table="district";
+class AddCompanyTypeModel extends Model{
+    public $table="company_type";
     public $timestamps=false;
-    protected $primaryKey = 'did';
+    protected $primaryKey = 'id';
     protected $fillable=[
-        'did',
-        'id',
-        'district',
+        'company_type',
         '_token',
         
     ];

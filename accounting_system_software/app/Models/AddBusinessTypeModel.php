@@ -3,17 +3,13 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class CityModel extends Model{
-    public $table="city";
+class AddBusinessTypeModel extends Model{
+    public $table="business_type";
     public $timestamps=false;
-    protected $primaryKey = 'cid';
+    protected $primaryKey = 'id';
     protected $fillable=[
-        'cid',
-        'did',
-        'id',
-        'city_name',
+        'business_type',
         '_token',
         
     ];
 }
-
