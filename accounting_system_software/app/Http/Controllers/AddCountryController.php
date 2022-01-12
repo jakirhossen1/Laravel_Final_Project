@@ -53,7 +53,12 @@ public function destroy(Request $request){
    $data= AddCountryModel::find($id);
    $data->delete();
    }
+public function update_form(Request $request){
+      $id=$request->id;
+      $data['qr']= AddCountryModel::find($id);
+      echo view('users.update',$data);
    
+   }   
  public function update(Request $request){
     $id=$request->id;
     

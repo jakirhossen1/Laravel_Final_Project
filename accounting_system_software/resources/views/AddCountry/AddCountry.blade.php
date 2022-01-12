@@ -217,7 +217,18 @@ function delid(id){
     $('#del_id').val(id);
     
 }
-
+function upid(id){
+    $.ajax({
+        url:'country_update_form',
+        method:'GET',
+        dataType:'html',
+        data:{id:id},
+        success:function(data){
+            $('#up').html(data);
+            
+        }
+    })
+   }
 function update(){
      var form=$('#update').get(0);
    $.ajax({

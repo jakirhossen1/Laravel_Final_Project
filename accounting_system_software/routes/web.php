@@ -48,6 +48,7 @@ Route::get('country',[AddCountryController::class,'viewd']);
 // Route::get('us_print',[AddCountryController::class,'print']);
 Route::post('country_save',[AddCountryController::class,'save']);
 Route::post('country_del',[AddCountryController::class,'destroy']);
+Route::get('country_update_form',[AddCountryController::class,'update_form']);
 Route::post('country_update',[AddCountryController::class,'update']);
 
 // End AddCountryController 
