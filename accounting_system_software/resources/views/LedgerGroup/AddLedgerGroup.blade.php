@@ -37,8 +37,8 @@ foreach($qr as $row){?>
 <td><?php echo $row['group_id']?></td>
 <td><?php echo $row['ledger_name']?></td>
 <td>
-    <a style="color:#fff;" data-toggle="modal" data-target="#deleteid" onclick="delid(<?php echo $row['user_id']?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
-    <a style="color:#fff;" data-toggle="modal" data-target="#updateid" onclick="upid('<?php echo $row['user_id']?>')" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+    <a style="color:#fff;" data-toggle="modal" data-target="#deleteid" onclick="delid(<?php echo $row['ledger_id']?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+    <a style="color:#fff;" data-toggle="modal" data-target="#updateid" onclick="upid('<?php echo $row['ledger_id']?>')" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
     
 </td>
 </tr>

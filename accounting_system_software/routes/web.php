@@ -11,6 +11,10 @@ use App\Http\Controllers\AddBusinessTypeController;
 use App\Http\Controllers\AddCompanyTypeController;
 use App\Http\Controllers\AddGroupController;
 use App\Http\Controllers\AddLedgerGroupController;
+use App\Http\Controllers\AddLedgerSubGroupController;
+use App\Http\Controllers\AddLedgerPostingHeadController;
+use App\Http\Controllers\AddBudgetController;
+use App\Http\Controllers\AddVoucherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +53,7 @@ Route::post('authen',[LoginController::class,'authentiation']);
 Route::get('lout',[LoginController::class,'logout']);
 
 
-// Start LoginController
+// End LoginController
 
 //Start AddCountryController 
 
@@ -115,3 +119,59 @@ Route::get('ledgergroup_update_form',[AddLedgerGroupController::class,'update_fo
 Route::post('ledgergroup_update',[AddLedgerGroupController::class,'update']);
 
 // End AddLedgerGroupController 
+
+
+
+
+// Start  AddLedgerSubGroupController 
+
+Route::get('lsg',[AddLedgerSubGroupController::class,'viewd']);
+// Route::get('lsg_pdf',[AddLedgerSubGroupController::class,'pdf']);
+// Route::get('lsg_print',[AddLedgerSubGroupController::class,'print']);
+Route::post('lsg_save',[AddLedgerSubGroupController::class,'save']);
+Route::post('lsg_del',[AddLedgerSubGroupController::class,'destroy']);
+Route::get('lsg_update_form',[AddLedgerSubGroupController::class,'update_form']);
+Route::post('lsg_update',[AddLedgerSubGroupController::class,'update']);
+
+// End AddLedgerSubGroupController
+
+
+//Start AddLedgerPostingHeadController 
+
+Route::get('lph',[AddLedgerPostingHeadController::class,'viewd']);
+// Route::get('lph_pdf',[AddLedgerPostingHeadController::class,'pdf']);
+// Route::get('lph_print',[AddLedgerPostingHeadController::class,'print']);
+Route::post('lph_save',[AddLedgerPostingHeadController::class,'save']);
+Route::post('lph_del',[AddLedgerPostingHeadController::class,'destroy']);
+Route::get('lph_update_form',[AddLedgerPostingHeadController::class,'update_form']);
+Route::post('lph_update',[AddLedgerPostingHeadController::class,'update']);
+
+// End AddLedgerPostingHeadController
+
+
+
+//Start AddBudgetController 
+
+Route::get('bg',[AddBudgetController::class,'viewd']);
+// Route::get('bg_pdf',[AddBudgetController::class,'pdf']);
+// Route::get('bg_print',[AddBudgetController::class,'print']);
+Route::post('bg_save',[AddBudgetController::class,'save']);
+Route::post('bg_del',[AddBudgetController::class,'destroy']);
+Route::get('bg_update_form',[AddBudgetController::class,'update_form']);
+Route::post('bg_update',[AddBudgetController::class,'update']);
+
+// End AddBudgetController
+
+
+
+//Start AddVoucherController 
+
+Route::get('vcl',[AddVoucherController::class,'viewd']);
+Route::get('vcl_pdf',[AddVoucherController::class,'pdf']);
+Route::get('vcl_print',[AddVoucherController::class,'print']);
+Route::post('vcl_save',[AddVoucherController::class,'save']);
+Route::post('vcl_del',[AddVoucherController::class,'destroy']);
+Route::get('vcl_update_form',[AddVoucherController::class,'update_form']);
+Route::post('vcl_update',[AddVoucherController::class,'update']);
+
+// End AddVoucherController

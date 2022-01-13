@@ -77,9 +77,9 @@
 <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Company Information</span></a>
 </li>
-<li class="nk-menu-item">
+<!-- <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Change Logo</span></a>
-</li>
+</li> -->
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
 
@@ -97,10 +97,10 @@
 <a href="ledgergroup" class="nk-menu-link"><span class="nk-menu-text">Ledger Group</span></a>
 </li>
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Ledger Sub Group</span></a>
+<a href="lsg" class="nk-menu-link"><span class="nk-menu-text">Ledger Sub Group</span></a>
 </li>
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Ledger Posting</span></a>
+<a href="lph" class="nk-menu-link"><span class="nk-menu-text">Ledger Posting</span></a>
 </li>
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
@@ -113,7 +113,7 @@
 </a>
 <ul class="nk-menu-sub">
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Budgets</span></a>
+<a href="bg" class="nk-menu-link"><span class="nk-menu-text">Budgets</span></a>
 </li>
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
@@ -125,15 +125,15 @@
 <span class="nk-menu-text">Voucher</span>
 </a>
 <ul class="nk-menu-sub">
-<li class="nk-menu-item">
+<!-- <li class="nk-menu-item">
 <a href="html/transaction-basic.html" class="nk-menu-link"><span class="nk-menu-text">Voucher Type</span></a>
-</li>
+</li> -->
 <li class="nk-menu-item">
-<a href="html/transaction-crypto.html" class="nk-menu-link"><span class="nk-menu-text">Add Voucher</span></a>
+<a href="vcl" class="nk-menu-link"><span class="nk-menu-text">Voucher List</span></a>
 </li>
-<li class="nk-menu-item">
+<!-- <li class="nk-menu-item">
 <a href="html/transaction-crypto.html" class="nk-menu-link"><span class="nk-menu-text">Voucher List</span></a>
-</li>
+</li> -->
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
 

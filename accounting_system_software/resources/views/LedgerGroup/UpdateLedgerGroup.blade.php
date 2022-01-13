@@ -4,12 +4,12 @@
 
                         <div class="col-md-12">
                                <label>Group Type</label>
-                               <input type="text" class="form-control" name="group_id" id="group_id" value="<?php echo $qr['group_id ']?>" />
+                               <input type="text" class="form-control" name="group_id" id="group_id" value="<?php echo $qr['group_id']?>" />
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12">
                                <label>Ledger Name</label>
-                               <input type="text" class="form-control" name="ledger_name" id="ledger_name" value="<?php echo $qr['ledger_name ']?>" />
+                               <input type="text" class="form-control" name="ledger_name" id="ledger_name" value="<?php echo $qr['ledger_name']?>" />
                          </div>
                      </div>

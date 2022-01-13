@@ -12,7 +12,7 @@
 <div class="card card-preview">
     
 <div class="card-inner">
-    <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Group Type</a>
+    <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Ledger Sub Group</a>
    <!--  <a href="us_pdf" class="btn btn-danger">PDF</a>
     <a href="us_print" class="btn btn-success">Print</a> -->
     <p></p>
@@ -20,8 +20,8 @@
 <thead>
 <tr>
 <th>Sl</th>
-<th>Debit/Credit</th>
-<th>Group Type Name</th>
+<th>ledger_sub_group_parent_id</th>
+<th>ledger_sub_group_name</th>
 <th>Action</th>
 </tr>
 </thead>
@@ -32,8 +32,8 @@ $x=1;
 foreach($qr as $row){?>
 <tr>
 <td><?php echo $x++;?></td>
-<td><?php echo $row['debit_credit']?></td>
-<td><?php echo $row['group_type_name']?></td>
+<td><?php echo $row['ledger_sub_group_parent_id']?></td>
+<td><?php echo $row['ledger_sub_group_name']?></td>
 <td>
     <a style="color:#fff;" data-toggle="modal" data-target="#deleteid" onclick="delid(<?php echo $row['id']?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
     <a style="color:#fff;" data-toggle="modal" data-target="#updateid" onclick="upid('<?php echo $row['id']?>')" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
@@ -61,7 +61,7 @@ foreach($qr as $row){?>
         
         <div class="modal-content">
         <div class="modal-header">
-            <h4>Add Company Type</h4>
+            <h4>Add Ledger Sub Group</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
           <div class="modal-body">
@@ -70,22 +70,19 @@ foreach($qr as $row){?>
                   <div class="row">
 
                       <div class="col-md-12">
-                           <label>Select Type</label>
-                           <select class="form-control" name="debit_credit" id="debit_credit" onkeyup="validation(id)" onchange="validation(id)">
-                               <option value="select">Slect your type</option>
-                               <option value="Debit">Debit</option>
-                               <option value="Credit">Credit</option>
-                           </select>
-                           <label id="debit_credit_error" style="color:red"></label>
+                        <input type="hidden" class="form-control" name="ledger_sub_group_date" id="ledger_sub_group_date" onkeyup="validation(id)" onchange="validation(id)" value="{{date('Y-m-d')}}" />
+                           <label>Ledger Parent Type</label>
+                           <input type="text" class="form-control" name="ledger_sub_group_parent_id" id="ledger_sub_group_parent_id" onkeyup="validation(id)" onchange="validation(id)" />
+                           <label id="ledger_sub_group_parent_id_error" style="color:red"></label>
                       </div>
                     
                   </div>
                   <div class="row">
 
                       <div class="col-md-12">
-                           <label>Group Type Name</label>
-                           <input type="text" class="form-control" name="group_type_name" id="group_type_name" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="group_type_name_error" style="color:red"></label>
+                           <label>Ledger Sub Group Name</label>
+                           <input type="text" class="form-control" name="ledger_sub_group_name" id="ledger_sub_group_name" onkeyup="validation(id)" onchange="validation(id)" />
+                           <label id="ledger_sub_group_name_error" style="color:red"></label>
                       </div>
                     
                   </div>
@@ -144,7 +141,7 @@ foreach($qr as $row){?>
         
         <div class="modal-content">
         <div class="modal-header">
-            <h4>Update Group Type</h4>
+            <h4>Update Ledger Sub Group</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
              <form   id="update" method="post">
@@ -181,28 +178,28 @@ foreach($qr as $row){?>
 function save(){
   
     var form=$('#save').get(0);
-    var debit_credit=$('#debit_credit').val();
-    var group_type_name=$('#group_type_name').val();
-    if(debit_credit==='' || group_type_name===''){
-       if(debit_credit===''){
-        $('#debit_credit_error').html("Please select your type");
-        $('#debit_credit').css('border-color','red');
+    var ledger_sub_group_name=$('#ledger_sub_group_name').val();
+    var ledger_sub_group_parent_id=$('#ledger_sub_group_parent_id').val();
+    if(ledger_sub_group_name==='' || ledger_sub_group_parent_id===''){
+       if(ledger_sub_group_name===''){
+        $('#ledger_sub_group_name_error').html("Please enter your ledger sub group name");
+        $('#ledger_sub_group_name').css('border-color','red');
        }
-       if(group_type_name===''){
-        $('#group_type_name_error').html("Please enter your group type name");
-        $('#group_type_name').css('border-color','red');
+       if(ledger_sub_group_parent_id===''){
+        $('#ledger_sub_group_parent_id_error').html("Please select your ledger parent type");
+        $('#ledger_sub_group_parent_id').css('border-color','red');
        }
         
     }else{
         $.ajax({
        
-        url:'grouptype_save',
+        url:'lsg_save',
         method:'POST',
         data:new FormData(form),
         processData:false,
         contentType:false,
         success:function(){
-         window.location.assign('grouptype');   
+         window.location.assign('lsg');   
         }
        
         
@@ -220,7 +217,7 @@ function delid(id){
 }
 function upid(id){
     $.ajax({
-        url:'grouptype_update_form',
+        url:'lsg_update_form',
         method:'GET',
         dataType:'html',
         data:{id:id},
@@ -234,13 +231,13 @@ function update(){
      var form=$('#update').get(0);
    $.ajax({
        
-        url:'grouptype_update',
+        url:'lsg_update',
         method:'POST',
         data:new FormData(form),
         processData:false,
         contentType:false,
         success:function(){
-         window.location.assign('grouptype');   
+         window.location.assign('lsg');   
         }
        
         
@@ -253,12 +250,12 @@ function deletes(){
     var token=$('#_token').val();
    
     $.ajax({
-        url:'grouptype_del',
+        url:'lsg_del',
         method:'POST',
         dataType:'html',
         data:{id:id,_token:token},
         success:function(){
-             window.location.assign('grouptype');  
+             window.location.assign('lsg');  
         }
     })
     
