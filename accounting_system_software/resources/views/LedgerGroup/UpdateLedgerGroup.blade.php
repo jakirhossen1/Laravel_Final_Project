@@ -1,5 +1,5 @@
 <input type="hidden" name="_token" id="_token" value="{{ csrf_token()}}">
-<input type="hidden" name="ledger_id " value="<?php echo $qr['ledger_id ']?>" /> 
+<input type="hidden" name="ledger_id" value="<?php echo $qr['ledger_id']?>" /> 
                     <div class="row">
 
                         <div class="col-md-12">

@@ -178,13 +178,13 @@ function save(){
     var form=$('#save').get(0);
     var group_id=$('#group_id').val();
     var ledger_name=$('#ledger_name').val();
-    if(group_id==='' || ledger_name===''){
+    if(group_id==='' || ledger_name==='' ){
        if(group_id===''){
         $('#group_id_error').html("Please select your group type name");
         $('#group_id').css('border-color','red');
        }
        if(ledger_name===''){
-        $('#ledger_name_error').html("Please enter ledger name");
+        $('#ledger_name_error').html("Please enter your ledger name");
         $('#ledger_name').css('border-color','red');
        }
     }else{
@@ -244,7 +244,6 @@ function update(){
 }
 function deletes(){
     var id=$('#del_id').val(); 
-    // alert(id);
     var token=$('#_token').val();
    
     $.ajax({

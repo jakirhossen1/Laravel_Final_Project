@@ -327,7 +327,6 @@ function update(){
 }
 function deletes(){
     var id=$('#del_id').val(); 
-    // alert(id);
     var token=$('#_token').val();
    
     $.ajax({

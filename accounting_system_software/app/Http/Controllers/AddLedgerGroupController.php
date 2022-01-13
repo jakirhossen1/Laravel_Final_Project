@@ -49,7 +49,8 @@ public function save(Request $request){
 }
 
 public function destroy(Request $request){
-   $id=$request->post('id'); 
+   $id=$request->post('id');
+   // dd($id); 
    $data= AddLedgerGroupModel::where('ledger_id','=',$id)->first();
    $data->delete();
    }
@@ -58,15 +59,14 @@ public function update_form(Request $request){
       $data['qr']= AddLedgerGroupModel::where('ledger_id','=',$id)->first();
       echo view('LedgerGroup.UpdateLedgerGroup',$data);
    
-   }   
+   }
  public function update(Request $request){
     $id=$request->ledger_id;
-    
     $data= AddLedgerGroupModel::where('ledger_id','=',$id)->first();
-    $data->ledger_id=$request->ledger_id;
-    $data->ledger_name=$request->ledger_name;
-    $data->group_id=$request->group_id;
-    $data->save();
+        $data->ledger_name=$request->ledger_name;
+        $data->group_id=$request->group_id;
+        $data->_token=$request->_token;
+        $data->save();
 
 }
     
