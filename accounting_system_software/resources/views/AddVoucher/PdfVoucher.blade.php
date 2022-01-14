@@ -1,15 +1,15 @@
-<img src="{{URL('/')}}assests/images/email/kyc-success.png"/>
-<table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%">
+
+<table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;" >
 <thead>
 <tr>
 <th>Sl</th>
-
-<th>User Name</th>
-<th>Full Name</th>
-<th>Email</th>
-<th>Phone</th>
-<th>Picture</th>
-<th>A/C Date</th>
+<th>Voucher No</th>
+<th>Date</th>
+<th>Head Name</th>
+<th>Company Name</th>
+<th>Debit</th>
+<th>Credit</th>
+<th>Check No</th>
 <th>Status</th>
 </tr>
 </thead>
@@ -20,14 +20,14 @@ $x=1;
 foreach($qr as $row){?>
 <tr>
 <td><?php echo $x++;?></td>
-
-<td><?php echo $row['user_name']?></td>
-<td><?php echo $row['full_name']?></td>
-<td><?php echo $row['email']?></td>
-<td><?php echo $row['phone']?></td>
-<td><img style="height: 80px; width: 80px;" src="<?php echo URL('/').'/'.$row['picture']?>" class="img-thumbnail" /></td>
-<td><?php echo $row['account_creation_date']?></td>
-<td><?php echo $row['status']?></td>
+<td><?php echo $row['voucher_no']?></td>
+<td><?php echo $row['voucher_date']?></td>
+<td><?php echo $row['postling_head_id']?></td>
+<td><?php echo $row['company_id']?></td>
+<td><?php echo $row['debit_amount']?></td>
+<td><?php echo $row['credit_amount']?></td>
+<td><?php echo $row['check_no']?></td>
+<td><?php echo $row['voucher_status']?></td>
 </tr>
 <?php }?>
 </tbody>

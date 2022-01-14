@@ -13,10 +13,10 @@
     
 <div class="card-inner">
     <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Company Type</a>
-   <!--  <a href="us_pdf" class="btn btn-danger">PDF</a>
-    <a href="us_print" class="btn btn-success">Print</a> -->
+    <a href="companytype_pdf" class="btn btn-danger">PDF</a>
+    <a href="companytype_print" class="btn btn-success">Print</a>
     <p></p>
-<table class="datatable-init nowrap table-sm table-responsive">
+<table class="datatable-init nowrap table-sm table-responsive" style="text-align: center;" >
 <thead>
 <tr>
 <th>Sl</th>

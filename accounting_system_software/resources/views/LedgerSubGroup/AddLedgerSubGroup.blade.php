@@ -13,15 +13,15 @@
     
 <div class="card-inner">
     <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Ledger Sub Group</a>
-   <!--  <a href="us_pdf" class="btn btn-danger">PDF</a>
-    <a href="us_print" class="btn btn-success">Print</a> -->
+    <a href="lsg_pdf" class="btn btn-danger">PDF</a>
+    <a href="lsg_print" class="btn btn-success">Print</a>
     <p></p>
-<table class="datatable-init nowrap table-sm table-responsive">
+<table class="datatable-init nowrap table-sm table-responsive" style="text-align: center;"  >
 <thead>
 <tr>
 <th>Sl</th>
-<th>ledger_sub_group_parent_id</th>
-<th>ledger_sub_group_name</th>
+<th>Ledger Group</th>
+<th>Sub Group Name</th>
 <th>Action</th>
 </tr>
 </thead>

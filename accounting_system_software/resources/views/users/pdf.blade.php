@@ -1,5 +1,5 @@
-<img src="{{URL('/')}}assests/images/email/kyc-success.png"/>
-<table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%">
+
+<table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;" >
 <thead>
 <tr>
 <th>Sl</th>

@@ -22,25 +22,25 @@ public function viewd(){
     echo view('footer.footer');
 }
 
-// public function pdf(){
+public function pdf(){
     
-//     $vi['title']=$this->title;
-//     $vi['qr']= AddBusinessTypeModel::get();
-    
-
-// $pdf = PDF::loadView('users.pdf', $vi);
-//     return $pdf->stream('PWAD Users List.pdf');
-
-// }
-// public function print(){
-    
-//     $vi['title']=$this->title;
-//     $vi['qr']= AddBusinessTypeModel::get();
+    $vi['title']=$this->title;
+    $vi['qr']= AddBusinessTypeModel::get();
     
 
-//     echo view('users.print',$vi);
+$pdf = PDF::loadView('AddBusinessType.PdfBusinessType', $vi);
+    return $pdf->stream('PWAD Users List.pdf');
 
-// }
+}
+public function print(){
+    
+    $vi['title']=$this->title;
+    $vi['qr']= AddBusinessTypeModel::get();
+    
+
+    echo view('AddBusinessType.PrintBusinessType',$vi);
+
+}
 
 public function save(Request $request){
     $data=$request->all();

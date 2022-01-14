@@ -22,25 +22,25 @@ public function viewd(){
     echo view('footer.footer');
 }
 
-// public function pdf(){
+public function pdf(){
     
-//     $vi['title']=$this->title;
-//     $vi['qr']= AddGroupModel::get();
-    
-
-// $pdf = PDF::loadView('users.pdf', $vi);
-//     return $pdf->stream('PWAD Users List.pdf');
-
-// }
-// public function print(){
-    
-//     $vi['title']=$this->title;
-//     $vi['qr']= AddGroupModel::get();
+    $vi['title']=$this->title;
+    $vi['qr']= AddGroupModel::get();
     
 
-//     echo view('users.print',$vi);
+$pdf = PDF::loadView('AddGroup.pdf', $vi);
+    return $pdf->stream('PWAD Users List.pdf');
 
-// }
+}
+public function print(){
+    
+    $vi['title']=$this->title;
+    $vi['qr']= AddGroupModel::get();
+    
+
+    echo view('AddGroup.print',$vi);
+
+}
 
 public function save(Request $request){
     $data=$request->all();

@@ -13,10 +13,10 @@
     
 <div class="card-inner">
     <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Group Type</a>
-   <!--  <a href="us_pdf" class="btn btn-danger">PDF</a>
-    <a href="us_print" class="btn btn-success">Print</a> -->
+    <a href="grouptype_pdf" class="btn btn-danger">PDF</a>
+    <a href="grouptype_print" class="btn btn-success">Print</a>
     <p></p>
-<table class="datatable-init nowrap table-sm table-responsive">
+<table class="datatable-init nowrap table-sm table-responsive" style="text-align: center;" >
 <thead>
 <tr>
 <th>Sl</th>
@@ -61,7 +61,7 @@ foreach($qr as $row){?>
         
         <div class="modal-content">
         <div class="modal-header">
-            <h4>Add Company Type</h4>
+            <h4>Add Group Type</h4>
             <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
           <div class="modal-body">

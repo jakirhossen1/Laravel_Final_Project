@@ -16,7 +16,7 @@
     <a href="us_pdf" class="btn btn-danger">PDF</a>
     <a href="us_print" class="btn btn-success">Print</a>
     <p></p>
-<table class="datatable-init nowrap table-sm table-responsive">
+<table class="datatable-init nowrap table-sm table-responsive" style="text-align: center;" >
 <thead>
 <tr>
 <th>Sl</th>

@@ -22,25 +22,25 @@ public function viewd(){
     echo view('footer.footer');
 }
 
-// public function pdf(){
+public function pdf(){
     
-//     $vi['title']=$this->title;
-//     $vi['qr']= AddLedgerPostingHeadModel::get();
-    
-
-// $pdf = PDF::loadView('users.pdf', $vi);
-//     return $pdf->stream('PWAD Users List.pdf');
-
-// }
-// public function print(){
-    
-//     $vi['title']=$this->title;
-//     $vi['qr']= AddLedgerPostingHeadModel::get();
+    $vi['title']=$this->title;
+    $vi['qr']= AddLedgerPostingHeadModel::get();
     
 
-//     echo view('users.print',$vi);
+$pdf = PDF::loadView('AddLedgerPostingHead.pdf', $vi);
+    return $pdf->stream('PWAD Users List.pdf');
 
-// }
+}
+public function print(){
+    
+    $vi['title']=$this->title;
+    $vi['qr']= AddLedgerPostingHeadModel::get();
+    
+
+    echo view('AddLedgerPostingHead.print',$vi);
+
+}
 
 public function save(Request $request){
     $data=$request->all();

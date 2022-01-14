@@ -43,7 +43,7 @@
 </a>
 <ul class="nk-menu-sub">
 <li class="nk-menu-item">
-<a href="us" class="nk-menu-link"><span class="nk-menu-text">User List</span></a>
+<a href="us" class="nk-menu-link"><span class="nk-menu-text">Add User</span></a>
 </li>
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
@@ -75,7 +75,7 @@
 </a>
 <ul class="nk-menu-sub">
 <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Company Information</span></a>
+<a href="ac" class="nk-menu-link"><span class="nk-menu-text">Company Information</span></a>
 </li>
 <!-- <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Change Logo</span></a>

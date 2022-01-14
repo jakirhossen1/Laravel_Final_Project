@@ -28,7 +28,7 @@ public function pdf(){
     $vi['qr']= AddVoucherModel::get();
     
 
-$pdf = PDF::loadView('users.pdf', $vi);
+$pdf = PDF::loadView('AddVoucher.PdfVoucher', $vi);
     return $pdf->stream('PWAD Users List.pdf');
 
 }
@@ -38,7 +38,7 @@ public function print(){
     $vi['qr']= AddVoucherModel::get();
     
 
-    echo view('users.print',$vi);
+    echo view('AddVoucher.PrintVoucher',$vi);
 
 }
 
