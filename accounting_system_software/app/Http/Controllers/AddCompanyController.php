@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AddCompanyModel;
+use App\Models\AddCompanyTypeModel;
+use App\Models\AddBusinessTypeModel;
+use App\Models\AddCountryModel;
 use DB;
 use PDF;
 
@@ -14,6 +17,10 @@ public function viewd(){
     
     $vi['title']=$this->title;
     $vi['qr']= AddCompanyModel::get();
+    $vi['type']=AddCompanyTypeModel::get();
+    $vi['business']=AddBusinessTypeModel::get();
+    $vi['country']=AddCountryModel::get();
+    
     
     echo view('header.header',$vi);
     echo view('sidebar.sidebar');
@@ -87,6 +94,9 @@ public function destroy(Request $request){
 public function update_form(Request $request){
       $id=$request->id;
       $data['qr']= AddCompanyModel::where('company_id','=',$id)->first();
+      $data['type']=AddCompanyTypeModel::get();
+      $data['business']=AddBusinessTypeModel::get();
+      $data['country']=AddCountryModel::get();
       echo view('AddCompany.UpdateCompany',$data);
    
    }

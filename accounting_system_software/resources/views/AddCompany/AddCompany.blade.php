@@ -81,10 +81,9 @@ foreach($qr as $row){?>
                            <label>Company Type</label>
                            <select class="form-control" name="company_type" id="company_type" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your company type</option>
-                            <option value="Public">Public</option>
-                            <option value="Private">Private</option>
-                            <option value="LTD">LTD</option>
-                            <option value="Associate">Associate</option>
+                            @foreach($type as $Type)
+                            <option value="{{$Type->id}}">{{$Type->company_type}}</option>
+                            @endforeach
                             </select>
                            <label id="company_type_error" style="color:red"></label>
                       </div>
@@ -92,9 +91,9 @@ foreach($qr as $row){?>
                            <label>Business Type</label>
                            <select class="form-control" name="business_type" id="business_type" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your business type</option>
-                            <option value="Partnership">Partnership</option>
-                            <option value="Private">Private</option>
-                            <option value="Corporate">Corporate</option>
+                            @foreach($business as $Bus)
+                            <option value="{{$Bus->id}}">{{$Bus->business_type}}</option>
+                            @endforeach
                             </select>
                            <label id="business_type_error" style="color:red"></label>
                       </div>
@@ -105,10 +104,9 @@ foreach($qr as $row){?>
                            <label>Country Name</label>
                            <select class="form-control" name="country" id="country" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your country name</option>
-                            <option value="Bangladesh">Bangladesh</option>
-                            <option value="India">India</option>
-                            <option value="Pakistan">Pakistan</option>
-                            <option value="Singapure">Singapure</option>
+                            @foreach($country as $Country)
+                            <option value="{{$Country->id}}">{{$Country->country_name}}</option>
+                            @endforeach
                             </select>
                            <label id="country_error" style="color:red"></label>
                       </div>
