@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AddCountryModel;
+use App\Models\AddCountryNameModel;
 use DB;
 use PDF;
 
@@ -14,6 +15,7 @@ public function viewd(){
     
     $vi['title']=$this->title;
     $vi['qr']= AddCountryModel::get();
+    $vi['country']= AddCountryNameModel::get();
     
     echo view('header.header',$vi);
     echo view('sidebar.sidebar');
@@ -56,6 +58,7 @@ public function destroy(Request $request){
 public function update_form(Request $request){
       $id=$request->id;
       $data['qr']= AddCountryModel::find($id);
+      $data['country']= AddCountryNameModel::get();
       echo view('AddCountry.UpdateCountry',$data);
    
    }   

@@ -10,10 +10,12 @@
 <div class="row">
   <div class="col-md-12">
        <label>Country Name</label>
-       <select  class="form-control" name="country_name" id="country_name" value="<?php echo $qr['country_name']?>  >
-       <option value="select">Select your country</option>
-       <option value="Bangladesh">Bangladesh</option>
-       <option value="India">India</option>
+       <select  class="form-control" name="country_name" id="country_name" >
+            <option value="<?php echo $qr['country_name']?>"><?php echo $qr['country_name']?></option>
+            <option value="selected">Select your country</option>
+            @foreach($country as $Country)
+            <option value="{{$Country->id}}">{{$Country->name}}</option>
+            @endforeach
        </select>
        
   </div>

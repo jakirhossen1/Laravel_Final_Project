@@ -71,8 +71,13 @@ foreach($qr as $row){?>
 
                       <div class="col-md-12">
                         <input type="hidden" class="form-control" name="ledger_sub_group_date" id="ledger_sub_group_date" onkeyup="validation(id)" onchange="validation(id)" value="{{date('Y-m-d')}}" />
-                           <label>Ledger Parent Type</label>
-                           <input type="text" class="form-control" name="ledger_sub_group_parent_id" id="ledger_sub_group_parent_id" onkeyup="validation(id)" onchange="validation(id)" />
+                           <label>Ledger Group Type</label>
+                           <select class="form-control" name="ledger_sub_group_parent_id" id="ledger_sub_group_parent_id" onkeyup="validation(id)" onchange="validation(id)" >
+                                <option value="select">Please select your ledger group </option>
+                                @foreach($lgt as $LGT)
+                                <option value="{{$LGT->ledger_id}}">{{$LGT->ledger_name}}</option>
+                                @endforeach
+                           </select>
                            <label id="ledger_sub_group_parent_id_error" style="color:red"></label>
                       </div>
                     

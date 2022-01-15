@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AddLedgerPostingHeadModel;
+use App\Models\AddLedgerGroupModel;
+use App\Models\AddLedgerSubGroupModel;
 use DB;
 use PDF;
 
@@ -14,6 +16,8 @@ public function viewd(){
     
     $vi['title']=$this->title;
     $vi['qr']= AddLedgerPostingHeadModel::get();
+    $vi['lgt']= AddLedgerGroupModel::get();
+    $vi['lsg']= AddLedgerSubGroupModel::get();
     
     echo view('header.header',$vi);
     echo view('sidebar.sidebar');
@@ -56,6 +60,8 @@ public function destroy(Request $request){
 public function update_form(Request $request){
       $id=$request->id;
       $data['qr']= AddLedgerPostingHeadModel::where('ledger_posting_head_id','=',$id)->first();
+      $data['lgt']= AddLedgerGroupModel::get();
+      $data['lsg']= AddLedgerSubGroupModel::get();
       echo view('AddLedgerPostingHead.UpdateLedgerPostingHead',$data);
    
    }

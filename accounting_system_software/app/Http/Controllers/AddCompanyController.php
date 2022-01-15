@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Models\AddCompanyModel;
 use App\Models\AddCompanyTypeModel;
 use App\Models\AddBusinessTypeModel;
-use App\Models\AddCountryModel;
+use App\Models\AddCountryNameModel;
 use DB;
 use PDF;
 
@@ -19,7 +19,7 @@ public function viewd(){
     $vi['qr']= AddCompanyModel::get();
     $vi['type']=AddCompanyTypeModel::get();
     $vi['business']=AddBusinessTypeModel::get();
-    $vi['country']=AddCountryModel::get();
+    $vi['country']=AddCountryNameModel::get();
     
     
     echo view('header.header',$vi);
@@ -96,7 +96,7 @@ public function update_form(Request $request){
       $data['qr']= AddCompanyModel::where('company_id','=',$id)->first();
       $data['type']=AddCompanyTypeModel::get();
       $data['business']=AddBusinessTypeModel::get();
-      $data['country']=AddCountryModel::get();
+      $data['country']=AddCountryNameModel::get();
       echo view('AddCompany.UpdateCompany',$data);
    
    }

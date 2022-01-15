@@ -105,7 +105,7 @@ foreach($qr as $row){?>
                            <select class="form-control" name="country" id="country" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your country name</option>
                             @foreach($country as $Country)
-                            <option value="{{$Country->id}}">{{$Country->country_name}}</option>
+                            <option value="{{$Country->id}}">{{$Country->name}}</option>
                             @endforeach
                             </select>
                            <label id="country_error" style="color:red"></label>

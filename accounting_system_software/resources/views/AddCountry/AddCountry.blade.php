@@ -80,9 +80,10 @@ foreach($qr as $row){?>
                       <div class="col-md-12">
                            <label>Country Name</label>
                            <select  class="form-control" name="country_name" id="country_name" onkeyup="validation(id)" onchange="validation(id)" >
-                           <option value="select">Select your country</option>
-                           <option value="Bangladesh">Bangladesh</option>
-                           <option value="India">India</option>
+                                <option value="select">Please select your country name</option>
+                                @foreach($country as $Country)
+                                <option value="{{$Country->id}}">{{$Country->name}}</option>
+                                @endforeach
                            </select>
                            <label id="country_name_error" style="color:red"></label>
                       </div>
