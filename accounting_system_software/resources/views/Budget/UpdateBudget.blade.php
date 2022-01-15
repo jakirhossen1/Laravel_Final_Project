@@ -3,19 +3,36 @@
                   <div class="row">
                       <div class="col-md-12">
                            <label>Group Name</label>
-                           <input type="text" class="form-control" name="group_id" id="group_id" value="<?php echo $qr['group_id']?>" >
+                           <select class="form-control" name="group_id" id="group_id"  >
+                            <option value="<?php echo $qr['group_id']?>"><?php echo $qr['group_id']?></option>
+                            <option value="select">Please select your group name</option>
+                            @foreach($gt as $GT )
+                            <option value="{{$GT->id}}">{{$GT->group_type_name}}</option>
+                            @endforeach
+                           </select>
                       </div>
                   </div>
                   <div class="row">
                       <div class="col-md-12">
                            <label>Sub Group Name</label>
-                           <input type="text" class="form-control" name="sub_group_id" id="sub_group_id" value="<?php echo $qr['sub_group_id']?>" >
+                           <select class="form-control" name="sub_group_id" id="sub_group_id"  >
+                            <option value="<?php echo $qr['sub_group_id']?>"><?php echo $qr['sub_group_id']?></option>
+                            <option value="select">Please select your sub group name</option>
+                            @foreach($lsgn as $LSGN )
+                            <option value="{{$LSGN->id}}">{{$LSGN->ledger_sub_group_name}}</option>
+                            @endforeach
+                           </select>
                       </div>
                   </div>
                    <div class="row">
                       <div class="col-md-12">
                            <label>Posting Head Name</label>
-                           <input type="text" class="form-control" name="posting_head_id" id="posting_head_id" value="<?php echo $qr['posting_head_id']?>" >
+                           <select class="form-control" name="posting_head_id" id="posting_head_id"  >
+                            <option value="<?php echo $qr['posting_head_id']?>"><?php echo $qr['posting_head_id']?></option>
+                            @foreach($lphn as $LPHN )
+                            <option value="{{$LPHN->ledger_posting_head_id}}">{{$LPHN->posting_head_name}}</option>
+                            @endforeach
+                           </select>
                       </div>
                   </div>
                    <div class="row">
@@ -59,7 +76,13 @@
                   <div class="row">
                       <div class="col-md-12">
                            <label>User Name</label>
-                           <input type="text" class="form-control" name="user_id" id="user_id" value="<?php echo $qr['user_id']?>" >
+                           <select class="form-control" name="user_id" id="user_id"  >
+                            <option value="<?php echo $qr['user_id']?>"><?php echo $qr['user_id']?></option>
+                            <option value="select">Please select your user name</option>
+                            @foreach($un as $UN )
+                            <option value="{{$UN->user_id}}">{{$UN->user_name}}</option>
+                            @endforeach
+                           </select>
                       </div>
                   </div>
                   <div class="row">
