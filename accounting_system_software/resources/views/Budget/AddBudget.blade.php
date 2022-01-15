@@ -12,7 +12,7 @@
 <div class="card card-preview">
     
 <div class="card-inner">
-    <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Ledger Posting Head</a>
+    <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add Budget</a>
     <a href="bg_pdf" class="btn btn-danger">PDF</a>
     <a href="bg_print" class="btn btn-success">Print</a>
     <p></p>
@@ -82,7 +82,12 @@ foreach($qr as $row){?>
                   <div class="row">
                       <div class="col-md-12">
                            <label>Group Name</label>
-                           <input type="text" class="form-control" name="group_id" id="group_id" onkeyup="validation(id)" onchange="validation(id)" />
+                           <select class="form-control" name="group_id" id="group_id" onkeyup="validation(id)" onchange="validation(id)" >
+                            <option value="select">Please select your group name</option>
+                            @foreach($gt as $GT )
+                            <option value="{{$GT->id}}">{{$GT->group_type_name}}</option>
+                            @endforeach
+                           </select>
                            <label id="group_id_error" style="color:red"></label>
                       </div>
                     
@@ -90,7 +95,12 @@ foreach($qr as $row){?>
                   <div class="row">
                       <div class="col-md-12">
                            <label>Sub Group Name</label>
-                           <input type="text" class="form-control" name="sub_group_id" id="sub_group_id" onkeyup="validation(id)" onchange="validation(id)" />
+                           <select class="form-control" name="sub_group_id" id="sub_group_id" onkeyup="validation(id)" onchange="validation(id)" >
+                            <option value="select">Please select your sub group name</option>
+                            @foreach($lsgn as $LSGN )
+                            <option value="{{$LSGN->id}}">{{$LSGN->ledger_sub_group_name}}</option>
+                            @endforeach
+                           </select>
                            <label id="sub_group_id_error" style="color:red"></label>
                       </div>
                     
@@ -98,7 +108,12 @@ foreach($qr as $row){?>
                    <div class="row">
                       <div class="col-md-12">
                            <label>Posting Head Name</label>
-                           <input type="text" class="form-control" name="posting_head_id" id="posting_head_id" onkeyup="validation(id)" onchange="validation(id)" />
+                           <select class="form-control" name="posting_head_id" id="posting_head_id" onkeyup="validation(id)" onchange="validation(id)" >
+                            <option value="select">Please select your posting head name</option>
+                            @foreach($lphn as $LPHN )
+                            <option value="{{$LPHN->ledger_posting_head_id}}">{{$LPHN->posting_head_name}}</option>
+                            @endforeach
+                           </select>
                            <label id="posting_head_id_error" style="color:red"></label>
                       </div>
                     
@@ -148,7 +163,12 @@ foreach($qr as $row){?>
                   <div class="row">
                       <div class="col-md-12">
                            <label>User Name</label>
-                           <input type="text" class="form-control" name="user_id" id="user_id" onkeyup="validation(id)" onchange="validation(id)" />
+                           <select class="form-control" name="user_id" id="user_id" onkeyup="validation(id)" onchange="validation(id)" >
+                            <option value="select">Please select your user name</option>
+                            @foreach($un as $UN )
+                            <option value="{{$UN->user_id}}">{{$UN->user_name}}</option>
+                            @endforeach
+                           </select>
                            <label id="user_id_error" style="color:red"></label>
                       </div>
                     

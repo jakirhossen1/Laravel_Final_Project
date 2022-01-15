@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AddBudgetModel;
+use App\Models\AddGroupModel;
+use App\Models\AddLedgerSubGroupModel;
+use App\Models\AddLedgerPostingHeadModel;
+use App\Models\UsersModel;
 use DB;
 use PDF;
 
@@ -14,6 +18,10 @@ public function viewd(){
     
     $vi['title']=$this->title;
     $vi['qr']= AddBudgetModel::get();
+    $vi['gt']= AddGroupModel::get();
+    $vi['lsgn']= AddLedgerSubGroupModel::get();
+    $vi['lphn']= AddLedgerPostingHeadModel::get();
+    $vi['un']= UsersModel::get();
     
     echo view('header.header',$vi);
     echo view('sidebar.sidebar');
@@ -56,6 +64,10 @@ public function destroy(Request $request){
 public function update_form(Request $request){
       $id=$request->id;
       $data['qr']= AddBudgetModel::where('budget_id','=',$id)->first();
+      $data['gt']= AddGroupModel::get();
+      $data['lsgn']= AddLedgerSubGroupModel::get();
+      $data['lphn']= AddLedgerPostingHeadModel::get();
+      $data['un']= UsersModel::get();
       echo view('Budget.UpdateBudget',$data);
    
    }   
