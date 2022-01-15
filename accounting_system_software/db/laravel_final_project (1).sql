@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2022 at 02:06 PM
+-- Generation Time: Jan 15, 2022 at 09:53 AM
 -- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,15 +29,24 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `budget` (
   `budget_id` int(11) NOT NULL,
-  `group_id` int(100) DEFAULT NULL,
-  `posting_head_id` int(100) DEFAULT NULL,
+  `group_id` text DEFAULT NULL,
+  `sub_group_id` text NOT NULL,
+  `posting_head_id` text DEFAULT NULL,
   `budget_type` varchar(255) DEFAULT NULL,
   `month` varchar(255) DEFAULT NULL,
   `amount` decimal(10,2) DEFAULT NULL,
-  `user_id` int(100) DEFAULT NULL,
+  `user_id` text DEFAULT NULL,
   `date_time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `creation_date` date DEFAULT NULL
+  `creation_date` date DEFAULT NULL,
+  `_token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `budget`
+--
+
+INSERT INTO `budget` (`budget_id`, `group_id`, `sub_group_id`, `posting_head_id`, `budget_type`, `month`, `amount`, `user_id`, `date_time`, `creation_date`, `_token`) VALUES
+(1, 'Assets', 'Current Assets', 'Cash In Bank', 'Monthly', 'January', '500.00', 'jakirhossen', '2022-01-13 18:54:45.190928', '2022-01-14', 'ihbJsWwiyxXg4aOPFXGkjqe8i5w8wOQRKESATLHJ');
 
 -- --------------------------------------------------------
 
@@ -71,18 +80,27 @@ CREATE TABLE `company` (
   `company_type` varchar(255) DEFAULT NULL,
   `business_type` varchar(255) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
-  `country_name` varchar(255) DEFAULT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `phone` int(20) DEFAULT NULL,
-  `company_registration_no` int(100) DEFAULT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `company_registration_no` text DEFAULT NULL,
   `registration_doc` varchar(255) DEFAULT NULL,
   `tin` varchar(255) DEFAULT NULL,
   `tin_doc` varchar(255) DEFAULT NULL,
   `vat` decimal(10,2) DEFAULT NULL,
   `vat_doc` varchar(255) DEFAULT NULL,
   `trade_license` varchar(255) DEFAULT NULL,
-  `company_logo` varchar(255) DEFAULT NULL
+  `picture` varchar(255) DEFAULT NULL,
+  `_token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `company`
+--
+
+INSERT INTO `company` (`company_id`, `company_type`, `business_type`, `country`, `company_name`, `address`, `phone`, `company_registration_no`, `registration_doc`, `tin`, `tin_doc`, `vat`, `vat_doc`, `trade_license`, `picture`, `_token`) VALUES
+(1, 'Private', 'Partnership', 'Bangladesh', 'JK Fashion', 'Farmgate,Dhaka-1215', '01791618333', 'AS-4585855', NULL, '857458578997', NULL, '20.00', NULL, 'BD-456789555', 'assets/upload/gallery.png', 'PsM6p4OibrPkm5xhyLPnXQlOkaLRkgailyASEltQ'),
+(2, 'LTD', 'Partnership', 'Bangladesh', 'JK Enterprise', 'Farmgate,Dhaka-1215', '01836214566', 'AS-4585856', NULL, '857458578998', NULL, '25.00', NULL, 'BD-456789556', 'assets/upload/hasan4.JPG', 'PsM6p4OibrPkm5xhyLPnXQlOkaLRkgailyASEltQ');
 
 -- --------------------------------------------------------
 
@@ -126,7 +144,8 @@ CREATE TABLE `country` (
 INSERT INTO `country` (`id`, `city_name`, `country_name`, `_token`) VALUES
 (1, 'Mirzapur', 'Bangladesh', 'xZjW3Ta4kdfrgfRjgIp3spAJFAaIqoSToSYjffTO'),
 (3, 'Bogura', 'Bangladesh', 'xZjW3Ta4kdfrgfRjgIp3spAJFAaIqoSToSYjffTO'),
-(4, 'Dhaka', 'Bangladesh', 'xZjW3Ta4kdfrgfRjgIp3spAJFAaIqoSToSYjffTO');
+(4, 'Dhaka', 'Bangladesh', 'xZjW3Ta4kdfrgfRjgIp3spAJFAaIqoSToSYjffTO'),
+(5, 'Tangail', 'Bangladesh', 'zzsQ73Oapyx1tg2OlTU8KNavrnhe0rVCZqG888lg');
 
 -- --------------------------------------------------------
 
@@ -197,8 +216,7 @@ CREATE TABLE `ledger_group` (
 --
 
 INSERT INTO `ledger_group` (`ledger_id`, `ledger_name`, `group_id`, `_token`) VALUES
-(1, NULL, '0', 'O5jCtsvZAiQINrBKWjz158ePWScNPIYzmGVNmYM9'),
-(2, 'Current Assets', 'Assets', 'O5jCtsvZAiQINrBKWjz158ePWScNPIYzmGVNmYM9');
+(2, 'Current Asset', 'Assets', 'qUBuilPogIWFqn5BCT2vcZk8WV1iRSAFMsxxIweK');
 
 -- --------------------------------------------------------
 
@@ -208,12 +226,21 @@ INSERT INTO `ledger_group` (`ledger_id`, `ledger_name`, `group_id`, `_token`) VA
 
 CREATE TABLE `ledger_posting_head` (
   `ledger_posting_head_id` int(11) NOT NULL,
-  `ledger_sub_group_id` int(100) DEFAULT NULL,
-  `ledger_group_id` int(100) DEFAULT NULL,
+  `ledger_sub_group_id` text DEFAULT NULL,
+  `ledger_group_id` text DEFAULT NULL,
   `posting_head_name` varchar(255) DEFAULT NULL,
   `posting_head_date` date DEFAULT NULL,
-  `status` varchar(255) DEFAULT NULL
+  `status` varchar(255) DEFAULT NULL,
+  `_token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ledger_posting_head`
+--
+
+INSERT INTO `ledger_posting_head` (`ledger_posting_head_id`, `ledger_sub_group_id`, `ledger_group_id`, `posting_head_name`, `posting_head_date`, `status`, `_token`) VALUES
+(3, 'Current Assets', 'a', 'c', '2022-01-13', NULL, 'qUBuilPogIWFqn5BCT2vcZk8WV1iRSAFMsxxIweK'),
+(4, 'Current Assets', 'a', 'Cash in bank', '2022-01-13', NULL, 'qUBuilPogIWFqn5BCT2vcZk8WV1iRSAFMsxxIweK');
 
 -- --------------------------------------------------------
 
@@ -222,11 +249,19 @@ CREATE TABLE `ledger_posting_head` (
 --
 
 CREATE TABLE `ledger_sub_group` (
-  `ledger_sub_group_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `ledger_sub_group_name` varchar(255) DEFAULT NULL,
   `ledger_sub_group_date` date DEFAULT NULL,
-  `ledger_sub_group_parent_id` int(100) DEFAULT NULL
+  `ledger_sub_group_parent_id` text DEFAULT NULL,
+  `_token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ledger_sub_group`
+--
+
+INSERT INTO `ledger_sub_group` (`id`, `ledger_sub_group_name`, `ledger_sub_group_date`, `ledger_sub_group_parent_id`, `_token`) VALUES
+(1, 'Stock', NULL, 'Current Assets', 'qUBuilPogIWFqn5BCT2vcZk8WV1iRSAFMsxxIweK');
 
 -- --------------------------------------------------------
 
@@ -349,16 +384,17 @@ CREATE TABLE `user_types` (
 
 CREATE TABLE `voucher` (
   `sl_no` int(11) NOT NULL,
-  `voucher_no` int(100) DEFAULT NULL,
+  `voucher_no` text DEFAULT NULL,
   `voucher_date` date DEFAULT NULL,
   `voucher_description` varchar(255) DEFAULT NULL,
-  `group_id` int(100) DEFAULT NULL,
-  `postling_head_id` int(100) DEFAULT NULL,
+  `group_id` text DEFAULT NULL,
+  `sub_group_id` text NOT NULL,
+  `postling_head_id` text DEFAULT NULL,
   `debit_amount` decimal(10,2) DEFAULT NULL,
   `credit_amount` decimal(10,2) DEFAULT NULL,
-  `user_id` int(100) DEFAULT NULL,
+  `user_id` text DEFAULT NULL,
   `entry_date_and_time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
-  `company_id` int(100) DEFAULT NULL,
+  `company_id` text DEFAULT NULL,
   `voucher_document` varchar(255) DEFAULT NULL,
   `check_no` varchar(255) DEFAULT NULL,
   `check_date` date DEFAULT NULL,
@@ -367,8 +403,16 @@ CREATE TABLE `voucher` (
   `checked_by` varchar(255) DEFAULT NULL,
   `approved_by` varchar(255) DEFAULT NULL,
   `modify_count` varchar(255) DEFAULT NULL,
-  `voucher_status` varchar(255) DEFAULT NULL
+  `voucher_status` varchar(255) DEFAULT NULL,
+  `_token` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `voucher`
+--
+
+INSERT INTO `voucher` (`sl_no`, `voucher_no`, `voucher_date`, `voucher_description`, `group_id`, `sub_group_id`, `postling_head_id`, `debit_amount`, `credit_amount`, `user_id`, `entry_date_and_time`, `company_id`, `voucher_document`, `check_no`, `check_date`, `voucher_type`, `prepared_by`, `checked_by`, `approved_by`, `modify_count`, `voucher_status`, `_token`) VALUES
+(2, 'PS2154qTp', '2022-01-14', NULL, 'Assets', 'Current Assets', 'Cash In Bank', '500.00', '300.00', 'jakirhossen', '2022-01-13 21:30:15.337597', 'JK Enterprise', NULL, '20507750213046', '2022-01-14', 'Bank Payment', 'jakir', NULL, NULL, NULL, 'Paid', 'kpmxGgILs5OOviCd9z6dRxp2Od9ACGXCCqY9nDKb');
 
 --
 -- Indexes for dumped tables
@@ -439,7 +483,7 @@ ALTER TABLE `ledger_posting_head`
 -- Indexes for table `ledger_sub_group`
 --
 ALTER TABLE `ledger_sub_group`
-  ADD PRIMARY KEY (`ledger_sub_group_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `migrations`
@@ -493,7 +537,7 @@ ALTER TABLE `voucher`
 -- AUTO_INCREMENT for table `budget`
 --
 ALTER TABLE `budget`
-  MODIFY `budget_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `budget_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `business_type`
@@ -505,7 +549,7 @@ ALTER TABLE `business_type`
 -- AUTO_INCREMENT for table `company`
 --
 ALTER TABLE `company`
-  MODIFY `company_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `company_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `company_type`
@@ -517,7 +561,7 @@ ALTER TABLE `company_type`
 -- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -535,25 +579,25 @@ ALTER TABLE `fiscal_year`
 -- AUTO_INCREMENT for table `group_type`
 --
 ALTER TABLE `group_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ledger_group`
 --
 ALTER TABLE `ledger_group`
-  MODIFY `ledger_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ledger_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `ledger_posting_head`
 --
 ALTER TABLE `ledger_posting_head`
-  MODIFY `ledger_posting_head_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ledger_posting_head_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ledger_sub_group`
 --
 ALTER TABLE `ledger_sub_group`
-  MODIFY `ledger_sub_group_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -577,7 +621,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `user_table`
 --
 ALTER TABLE `user_table`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `user_types`
@@ -589,7 +633,7 @@ ALTER TABLE `user_types`
 -- AUTO_INCREMENT for table `voucher`
 --
 ALTER TABLE `voucher`
-  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `sl_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
