@@ -76,7 +76,7 @@ foreach($qr as $row){?>
                                <select class="form-control" name="group_id" id="group_id" onkeyup="validation(id)" onchange="validation(id)" >
                                 <option value="select">Please select your group type</option>
                                 @foreach($gt as $GT)
-                                <option value="{{$GT->id}}">{{$GT->group_type_name}}</option>
+                                <option value="{{$GT->group_type_name}}">{{$GT->group_type_name}}</option>
                                 @endforeach
                                </select>
                                <label id="group_id_error" style="color:red"></label>
@@ -118,7 +118,7 @@ foreach($qr as $row){?>
             
              
               
-              <input type="text" name="del_id" id="del_id" value="" class="form-control form-control-sm"/>
+              <input type="hidden" name="del_id" id="del_id" value="" class="form-control form-control-sm"/>
             
         </div>  
            <div class="modal-footer">

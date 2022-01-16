@@ -77,7 +77,7 @@ foreach($qr as $row){?>
                            <select class="form-control" name="ledger_group_id" id="ledger_group_id" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="select">Please select your ledger group name</option>
                             @foreach($lgt as $LGT)
-                            <option value="{{$LGT->ledger_id}}">{{$LGT->ledger_name}}</option>
+                            <option value="{{$LGT->ledger_name}}">{{$LGT->ledger_name}}</option>
                             @endforeach
                            </select>
                            <label id="ledger_group_id_error" style="color:red"></label>
@@ -90,7 +90,7 @@ foreach($qr as $row){?>
                            <select class="form-control" name="ledger_sub_group_id" id="ledger_sub_group_id" onkeyup="validation(id)" onchange="validation(id)" />
                                <option value="select">Please select your ledger sub group name</option>
                                 @foreach($lsg as $LSG)
-                                <option value="{{$LSG->id}}">{{$LSG->ledger_sub_group_name}}</option>
+                                <option value="{{$LSG->ledger_sub_group_name}}">{{$LSG->ledger_sub_group_name}}</option>
                                 @endforeach
                            </select>
                            <label id="ledger_sub_group_id_error" style="color:red"></label>
@@ -142,7 +142,7 @@ foreach($qr as $row){?>
             
              
               
-              <input type="text" name="del_id" id="del_id" value="" class="form-control form-control-sm"/>
+              <input type="hidden" name="del_id" id="del_id" value="" class="form-control form-control-sm"/>
             
         </div>  
            <div class="modal-footer">

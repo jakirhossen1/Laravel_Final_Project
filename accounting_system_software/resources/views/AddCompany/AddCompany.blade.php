@@ -82,7 +82,7 @@ foreach($qr as $row){?>
                            <select class="form-control" name="company_type" id="company_type" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your company type</option>
                             @foreach($type as $Type)
-                            <option value="{{$Type->id}}">{{$Type->company_type}}</option>
+                            <option value="{{$Type->company_type}}">{{$Type->company_type}}</option>
                             @endforeach
                             </select>
                            <label id="company_type_error" style="color:red"></label>
@@ -92,7 +92,7 @@ foreach($qr as $row){?>
                            <select class="form-control" name="business_type" id="business_type" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your business type</option>
                             @foreach($business as $Bus)
-                            <option value="{{$Bus->id}}">{{$Bus->business_type}}</option>
+                            <option value="{{$Bus->business_type}}">{{$Bus->business_type}}</option>
                             @endforeach
                             </select>
                            <label id="business_type_error" style="color:red"></label>
@@ -105,7 +105,7 @@ foreach($qr as $row){?>
                            <select class="form-control" name="country" id="country" onkeyup="validation(id)" onchange="validation(id)" >
                             <option value="">Please select your country name</option>
                             @foreach($country as $Country)
-                            <option value="{{$Country->id}}">{{$Country->name}}</option>
+                            <option value="{{$Country->name}}">{{$Country->name}}</option>
                             @endforeach
                             </select>
                            <label id="country_error" style="color:red"></label>
@@ -190,7 +190,7 @@ foreach($qr as $row){?>
             
              
               
-              <input type="text" name="del_id" id="del_id" value="" class="form-control form-control-sm"/>
+              <input type="hidden" name="del_id" id="del_id" value="" class="form-control form-control-sm"/>
             
         </div>  
            <div class="modal-footer">

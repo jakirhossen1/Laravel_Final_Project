@@ -7,7 +7,7 @@
                             <option value="<?php echo $qr['group_id']?>"><?php echo $qr['group_id']?></option>
                             <option value="select">Please select your group name</option>
                             @foreach($gt as $GT )
-                            <option value="{{$GT->id}}">{{$GT->group_type_name}}</option>
+                            <option value="{{$GT->group_type_name}}">{{$GT->group_type_name}}</option>
                             @endforeach
                            </select>
                       </div>
@@ -19,7 +19,7 @@
                             <option value="<?php echo $qr['sub_group_id']?>"><?php echo $qr['sub_group_id']?></option>
                             <option value="select">Please select your sub group name</option>
                             @foreach($lsgn as $LSGN )
-                            <option value="{{$LSGN->id}}">{{$LSGN->ledger_sub_group_name}}</option>
+                            <option value="{{$LSGN->ledger_sub_group_name}}">{{$LSGN->ledger_sub_group_name}}</option>
                             @endforeach
                            </select>
                       </div>
@@ -30,7 +30,7 @@
                            <select class="form-control" name="posting_head_id" id="posting_head_id"  >
                             <option value="<?php echo $qr['posting_head_id']?>"><?php echo $qr['posting_head_id']?></option>
                             @foreach($lphn as $LPHN )
-                            <option value="{{$LPHN->ledger_posting_head_id}}">{{$LPHN->posting_head_name}}</option>
+                            <option value="{{$LPHN->posting_head_name}}">{{$LPHN->posting_head_name}}</option>
                             @endforeach
                            </select>
                       </div>
@@ -80,7 +80,7 @@
                             <option value="<?php echo $qr['user_id']?>"><?php echo $qr['user_id']?></option>
                             <option value="select">Please select your user name</option>
                             @foreach($un as $UN )
-                            <option value="{{$UN->user_id}}">{{$UN->user_name}}</option>
+                            <option value="{{$UN->user_name}}">{{$UN->user_name}}</option>
                             @endforeach
                            </select>
                       </div>

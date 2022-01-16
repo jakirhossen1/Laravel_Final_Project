@@ -7,7 +7,7 @@
              <option value="<?php echo $qr['company_type']?>" ><?php echo $qr['company_type']?></option>
              <option value="">Please select your company type</option>
              @foreach($type as $Type)
-             <option value="{{$Type->id}}">{{$Type->company_type}}</option>
+             <option value="{{$Type->company_type}}">{{$Type->company_type}}</option>
              @endforeach
         </select>
   </div>
@@ -17,7 +17,7 @@
              <option value="<?php echo $qr['business_type']?>"><?php echo $qr['business_type']?></option>
              <option value="">Please select your business type</option>
              @foreach($business as $Bus)
-             <option value="{{$Bus->id}}">{{$Bus->business_type}}</option>
+             <option value="{{$Bus->business_type}}">{{$Bus->business_type}}</option>
              @endforeach
         </select>
   </div>
@@ -30,7 +30,7 @@
              <option value="<?php echo $qr['country']?>"><?php echo $qr['country']?></option>
              <option value="">Please select your country name</option>
              @foreach($country as $Country)
-             <option value="{{$Country->id}}">{{$Country->name}}</option>
+             <option value="{{$Country->name}}">{{$Country->name}}</option>
              @endforeach
         </select>
   </div>

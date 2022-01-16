@@ -7,7 +7,7 @@
 	    	<option value="<?php echo $qr['ledger_sub_group_parent_id']?>"><?php echo $qr['ledger_sub_group_parent_id']?></option>
 	    	<option value="select">Please select your ledger group </option>
             @foreach($lgt as $LGT)
-            <option value="{{$LGT->ledger_id}}">{{$LGT->ledger_name}}</option>
+            <option value="{{$LGT->ledger_name}}">{{$LGT->ledger_name}}</option>
             @endforeach
         </select>
 	</div>

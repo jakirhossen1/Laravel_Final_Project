@@ -8,7 +8,7 @@
                                     <option value="<?php echo $qr['group_id']?>"><?php echo $qr['group_id']?></option>
                                     <option value="select">Please select your group type</option>
                                     @foreach($gt as $GT)
-                                    <option value="{{$GT->id}}">{{$GT->group_type_name}}</option>
+                                    <option value="{{$GT->group_type_name}}">{{$GT->group_type_name}}</option>
                                     @endforeach
                                </select>
                         </div>

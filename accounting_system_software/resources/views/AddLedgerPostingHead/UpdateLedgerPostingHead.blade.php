@@ -7,7 +7,7 @@
                               <option value="<?php echo $qr['ledger_group_id']?>" > <?php echo $qr['ledger_group_id']?> </option>
                               <option value="select">Please select your ledger group name</option>
                               @foreach($lgt as $LGT)
-                              <option value="{{$LGT->ledger_id}}">{{$LGT->ledger_name}}</option>
+                              <option value="{{$LGT->ledger_name}}">{{$LGT->ledger_name}}</option>
                               @endforeach
                            </select>
                       </div>
@@ -20,7 +20,7 @@
                               <option value="<?php echo $qr['ledger_sub_group_id']?>"><?php echo $qr['ledger_sub_group_id']?></option>
                               <option value="select">Please select your ledger sub group name</option>
                               @foreach($lsg as $LSG)
-                              <option value="{{$LSG->id}}">{{$LSG->ledger_sub_group_name}}</option>
+                              <option value="{{$LSG->ledger_sub_group_name}}">{{$LSG->ledger_sub_group_name}}</option>
                               @endforeach
                            </select>
                       </div>

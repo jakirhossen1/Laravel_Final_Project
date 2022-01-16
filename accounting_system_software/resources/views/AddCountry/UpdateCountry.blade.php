@@ -14,7 +14,7 @@
             <option value="<?php echo $qr['country_name']?>"><?php echo $qr['country_name']?></option>
             <option value="selected">Select your country</option>
             @foreach($country as $Country)
-            <option value="{{$Country->id}}">{{$Country->name}}</option>
+            <option value="{{$Country->name}}">{{$Country->name}}</option>
             @endforeach
        </select>
        
