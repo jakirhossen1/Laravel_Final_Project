@@ -35,7 +35,7 @@
     <input  type="text" class="form-control form-control-lg" name="email" id="email" onkeyup="validation(id)" onchange="validation(id)" placeholder="Enter your email address or username">
     <label id="email_error" style="color:red;"></label>
 </div>
-</div><!-- .form-group -->
+</div>
 <div class="form-group">
 <div class="form-control-wrap">
 <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
@@ -45,11 +45,11 @@
     <input  type="password" class="form-control form-control-lg" name="password"  id="password" onkeyup="validation(id)" onchange="validation(id)" placeholder="Enter your passcode">
     <label id="password_error" style="color:red"></label>
 </div>
-</div><!-- .form-group -->
+</div>
 <div class="form-group">
     <button type="button" onclick="login()" class="btn btn-lg btn-primary btn-block">Sign in</button>
 </div>
-</form><!-- form -->
+</form>
     </div>
     <div class="col-md-4"></div>
     
