@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="zxx" class="js">
+<style type="text/css">
+    .mar{
+        margin-top:100px ;
+    }
+</style>
 
 <head>
 
@@ -19,33 +24,19 @@
 
 <body class="nk-body bg-white npc-general pg-auth" >
 
-<div class="nk-app-root">
-<!-- main @s -->
-<div class="nk-main ">
-<!-- wrap @s -->
-<div class="nk-wrap nk-wrap-nosidebar">
-<!-- content @s -->
-<div class="nk-content ">
-<div class="nk-split nk-split-page nk-split-md">
-<div class="nk-split-content nk-block-area nk-block-area-column nk-auth-container bg-white">
-<div class="absolute-top-right d-lg-none p-3 p-sm-5">
-<a href="#" class="toggle btn-white btn btn-icon btn-light" data-target="athPromo"><em class="icon ni ni-info"></em></a>
-</div>
-
-<div class="nk-block nk-block-middle nk-auth-body">
-<form method="post" action="#" class="form-validate is-alter " autocomplete="off"  >
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 mar">
+        <form method="post" action="#" class="form-validate is-alter " autocomplete="off"  >
     <input type="hidden" name="_token" id="_token" value="{{csrf_token()}}" />
 <div class="form-group">
 <div class="form-control-wrap">
-    <label class="form-label" for="email-address" >UserName Or Email</label>
+    
     <input  type="text" class="form-control form-control-lg" name="email" id="email" onkeyup="validation(id)" onchange="validation(id)" placeholder="Enter your email address or username">
     <label id="email_error" style="color:red;"></label>
 </div>
 </div><!-- .form-group -->
 <div class="form-group">
-<div class="form-label-group">
-<label class="form-label" for="password">Password</label>
-</div>
 <div class="form-control-wrap">
 <a tabindex="-1" href="#" class="form-icon form-icon-right passcode-switch lg" data-target="password">
 <em class="passcode-icon icon-show icon ni ni-eye"></em>
@@ -59,17 +50,14 @@
     <button type="button" onclick="login()" class="btn btn-lg btn-primary btn-block">Sign in</button>
 </div>
 </form><!-- form -->
-</div><!-- .nk-block -->
-</div><!-- .nk-split-content -->
-</div><!-- .nk-split -->
+    </div>
+    <div class="col-md-4"></div>
+    
 </div>
-<!-- wrap @e -->
-</div>
-<!-- content @e -->
-</div>
-<!-- main @e -->
-</div>
-<!-- app-root @e -->
+
+
+
+
 
 <!-- JavaScript -->
 <script src="assets/js/bundle.js"></script>

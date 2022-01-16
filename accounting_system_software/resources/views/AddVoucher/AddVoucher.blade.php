@@ -298,15 +298,15 @@ function save(){
     var postling_head_id=$('#postling_head_id').val();
     var voucher_type=$('#voucher_type').val();
     var voucher_no=$('#voucher_no').val();
-    var debit_amount=$('#debit_amount').val();
-    var credit_amount=$('#credit_amount').val();
+    // var debit_amount=$('#debit_amount').val();
+    // var credit_amount=$('#credit_amount').val();
     var user_id=$('#user_id').val();
     var check_no=$('#check_no').val();
     var check_date=$('#check_date').val();
     var voucher_status=$('#voucher_status').val();
     var prepared_by=$('#prepared_by').val();
 
-    if(company_id==='' || group_id==='' || sub_group_id==='' || postling_head_id==='' || voucher_type==='' || voucher_no==='' || debit_amount==='' || credit_amount===''|| user_id==='' || check_no==='' || check_date==='' || voucher_status==='' || prepared_by==='' ){
+    if(company_id==='' || group_id==='' || sub_group_id==='' || postling_head_id==='' || voucher_type==='' || voucher_no==='' /*|| debit_amount==='' || credit_amount===''*/|| user_id==='' || check_no==='' || check_date==='' || voucher_status==='' || prepared_by==='' ){
        if(company_id==='' ){
         $('#company_id_error').html("Please select your company name");
         $('#company_id').css('border-color','red');
@@ -331,14 +331,14 @@ function save(){
         $('#voucher_no_error').html("Please enter your voucher no");
         $('#voucher_no').css('border-color','red');
        }
-       if(debit_amount===''){
-        $('#debit_amount_error').html("Please enter your debit amount");
-        $('#debit_amount').css('border-color','red');
-       }
-       if(credit_amount===''){
-        $('#credit_amount_error').html("Please enter your credit amount");
-        $('#credit_amount').css('border-color','red');
-       }
+       // if(debit_amount===''){
+       //  $('#debit_amount_error').html("Please enter your debit amount");
+       //  $('#debit_amount').css('border-color','red');
+       // }
+       // if(credit_amount===''){
+       //  $('#credit_amount_error').html("Please enter your credit amount");
+       //  $('#credit_amount').css('border-color','red');
+       // }
        if(user_id===''){
         $('#user_id_error').html("Please select your user name");
         $('#user_id').css('border-color','red');
