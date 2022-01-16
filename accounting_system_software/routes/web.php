@@ -16,6 +16,7 @@ use App\Http\Controllers\AddLedgerPostingHeadController;
 use App\Http\Controllers\AddBudgetController;
 use App\Http\Controllers\AddVoucherController;
 use App\Http\Controllers\AddCompanyController;
+use App\Http\Controllers\ProfileViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,11 @@ use App\Http\Controllers\AddCompanyController;
 
 Route::get('/',[UserController::class,'viewd']);
 
+// Start ProfileViewController
+
+Route::get('pv',[ProfileViewController::class,'viewd']);
+
+// End ProfileViewController
 
 //Start UserController
 
