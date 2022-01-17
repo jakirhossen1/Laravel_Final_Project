@@ -34,6 +34,8 @@ Route::get('/',[UserController::class,'viewd']);
 // Start ProfileViewController
 
 Route::get('pv',[ProfileViewController::class,'viewd']);
+Route::get('pv_pdf',[ProfileViewController::class,'pdf']);
+Route::get('pv_print',[ProfileViewController::class,'print']);
 
 // End ProfileViewController
 

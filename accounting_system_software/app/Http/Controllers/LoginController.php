@@ -39,12 +39,15 @@ public function authentiation(Request $request){
     
     if($unique_user==1 && $unique_pass==1){
         $result_id=$result->user_id;
+        $result_names=$result->user_name;
         $result_email=$result->email;
         $result_phone=$result->phone;
         $result_password=$result->password;
         $result_status=$result->status;
         $result_token=$result->_token;
         $result_picture=$result->picture;
+       
+        $sess_name=$request->session()->put('sess_names',$result->user_name);
         $sess_name=$request->session()->put('sess_name',$result->full_name);
         $sess_user_id=$request->session()->put('sess_id',$result->user_id);
         $sess_email=$request->session()->put('sess_email',$result->email);
