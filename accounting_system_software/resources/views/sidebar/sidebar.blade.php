@@ -144,7 +144,7 @@
 </a>
 <ul class="nk-menu-sub">
 <li class="nk-menu-item">
-<a href="html/invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Date Wise Reports</span></a>
+<a href="dr" class="nk-menu-link"><span class="nk-menu-text">Date Wise Reports</span></a>
 </li>
 <li class="nk-menu-item">
 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Account Wise Balance</span></a>

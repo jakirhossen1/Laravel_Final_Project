@@ -17,6 +17,7 @@ use App\Http\Controllers\AddBudgetController;
 use App\Http\Controllers\AddVoucherController;
 use App\Http\Controllers\AddCompanyController;
 use App\Http\Controllers\ProfileViewController;
+use App\Http\Controllers\DateWiseReportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,18 @@ Route::get('pv_pdf',[ProfileViewController::class,'pdf']);
 Route::get('pv_print',[ProfileViewController::class,'print']);
 
 // End ProfileViewController
+
+
+//Start DateWiseReportController
+
+Route::get('dr',[DateWiseReportController::class,'viewd']);
+Route::post('dr_report',[DateWiseReportController::class,'date_wise_report']);
+
+
+//End DateWiseReportController
+
+
+
 
 //Start UserController
 
