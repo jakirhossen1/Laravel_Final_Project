@@ -12,6 +12,7 @@
 <a href="#" class="nk-nav-compact nk-quick-nav-icon d-none d-xl-inline-flex" data-target="sidebarMenu"><em class="icon ni ni-menu"></em></a>
 </div>
 <div class="nk-sidebar-brand">
+	<h6 style="color: white;">Accounting Software</h6>
 <!-- <a href="html/index.html" class="logo-link nk-sidebar-logo">
 <img class="logo-light logo-img" src="images/logo.png" srcset="./images/logo2x.png 2x" alt="logo">
 <img class="logo-dark logo-img" src="images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
@@ -26,7 +27,7 @@
 <h6 class="overline-title text-primary-alt">Dashboard</h6>
 </li> --><!-- .nk-menu-item -->
 <li class="nk-menu-item">
-<a href="home" class="nk-menu-link">
+<a href="{{route('dasboard')}}" class="nk-menu-link">
 <span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
 <span class="nk-menu-text">Dashboard</span>
 </a>
@@ -150,7 +151,7 @@
 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Account Wise Balance</span></a>
 </li>
 <li class="nk-menu-item">
-<a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Trial Balance</span></a>
+<a href="tb" class="nk-menu-link"><span class="nk-menu-text">Trial Balance</span></a>
 </li>
 <li class="nk-menu-item">
 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Earn Spend Report</span></a>

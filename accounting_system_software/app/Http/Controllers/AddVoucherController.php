@@ -53,8 +53,70 @@ public function print(){
 }
 
 public function save(Request $request){
-    $data=$request->all();
-    AddVoucherModel::create($data);
+
+    /*$data=$request->all();*/
+    //AddVoucherModel::create($data);
+
+    if ($request->input('debit_amount') == "") {
+
+
+    AddVoucherModel::insert([
+        'voucher_no'=>$request->input('voucher_no'),
+        'voucher_date'=>$request->input('voucher_date'),
+        'voucher_description'=>$request->input('voucher_description'),
+        'group_id'=>$request->input('group_id'),
+        'sub_group_id'=>$request->input('sub_group_id'),
+        'postling_head_id'=>$request->input('postling_head_id'),
+        'debit_amount'=>$request->input('credit_amount'),
+        'credit_amount'=>$request->input('credit_amount'),
+        'user_id'=>$request->input('user_id'),
+        'entry_date_and_time'=>$request->input('entry_date_and_time'),
+        'company_id'=>$request->input('company_id'),
+        'voucher_document'=>$request->input('voucher_document'),
+        'check_no'=>$request->input('check_no'),
+        'check_date'=>$request->input('check_date'),
+        'voucher_type'=>$request->input('voucher_type'),
+        'prepared_by'=>$request->input('prepared_by'),
+        'checked_by'=>$request->input('checked_by'),
+        'approved_by'=>$request->input('approved_by'),
+        'modify_count'=>$request->input('modify_count'),
+        'voucher_status'=>$request->input('voucher_status'),
+        '_token'=>$request->input('_token')
+    ]);
+
+
+        
+    }else if($request->input('credit_amount') == ""){
+
+
+            AddVoucherModel::insert([
+                'voucher_no'=>$request->input('voucher_no'),
+                'voucher_date'=>$request->input('voucher_date'),
+                'voucher_description'=>$request->input('voucher_description'),
+                'group_id'=>$request->input('group_id'),
+                'sub_group_id'=>$request->input('sub_group_id'),
+                'postling_head_id'=>$request->input('postling_head_id'),
+                'debit_amount'=>$request->input('debit_amount'),
+                'credit_amount'=>$request->input('debit_amount'),
+                'user_id'=>$request->input('user_id'),
+                'entry_date_and_time'=>$request->input('entry_date_and_time'),
+                'company_id'=>$request->input('company_id'),
+                'voucher_document'=>$request->input('voucher_document'),
+                'check_no'=>$request->input('check_no'),
+                'check_date'=>$request->input('check_date'),
+                'voucher_type'=>$request->input('voucher_type'),
+                'prepared_by'=>$request->input('prepared_by'),
+                'checked_by'=>$request->input('checked_by'),
+                'approved_by'=>$request->input('approved_by'),
+                'modify_count'=>$request->input('modify_count'),
+                'voucher_status'=>$request->input('voucher_status'),
+                '_token'=>$request->input('_token')
+            ]);
+
+
+
+
+    }
 
 }
 

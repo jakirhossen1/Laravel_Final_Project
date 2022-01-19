@@ -2,7 +2,7 @@
 <div class="nk-footer">
 <div class="container-fluid">
 <div class="nk-footer-wrap">
-<div class="nk-footer-copyright"> &copy; 2021 <i><b>Accounting software</b></i> Design and Develop By Jakir Hossen
+<div class="nk-footer-copyright"> &copy; 2020-{{date('Y')}} <i><b>Accounting software</b></i> Design and Develop By Jakir Hossen
 </div>
 </div>
 </div>

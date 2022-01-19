@@ -18,6 +18,8 @@ use App\Http\Controllers\AddVoucherController;
 use App\Http\Controllers\AddCompanyController;
 use App\Http\Controllers\ProfileViewController;
 use App\Http\Controllers\DateWiseReportController;
+use App\Http\Controllers\TrialBalanceController;
+use App\Http\Controllers\DasboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +32,13 @@ use App\Http\Controllers\DateWiseReportController;
 |
 */
 
-Route::get('/',[UserController::class,'viewd']);
+Route::get('/',[DasboardController::class,'dasboard'])->name('dasboard');
+
+
+Route::get('tb',[TrialBalanceController::class,'viewd']);
+Route::get('tb_pdf',[TrialBalanceController::class,'pdf']);
+Route::get('tb_print',[TrialBalanceController::class,'print']);
+Route::get('trialGenerate',[TrialBalanceController::class,'trialGenerate']);
 
 // Start ProfileViewController
 
