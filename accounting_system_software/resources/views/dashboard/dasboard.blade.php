@@ -9,7 +9,7 @@
 							<div class="card-inner">
 								<div class="main">
 									<div>
-										<i class="fas fa-user"></i>
+										<i class="fas fa-users"></i>
 										<h3>Total Users: {{$user}}</h3>
 									</div>
 									<div>
@@ -42,30 +42,24 @@
     .main div {
         margin: 10px;
         border-radius: 5px;
-        border: 1px solid #ddd;
+        border: 1px solid blue;
         padding: 10px;
         min-height: 120px;
-        background: #f8f4f4;
+        background:black;
         min-width: 210px;
         text-align: center;
         box-shadow: inset -1px -2px 0px 0px;
         border: 1px solid #a79797;
     }
-
     .main div i {
         font-size: 36px;
-        color: #196cad;
+        color: blue;
     }
-
     .main div h3{
         font-size: 18px;
+        color:white;
         text-align: center;
         margin-top: 20px;
-    }
-
-    .main div h4{
-        font-size: 15px;
-        text-align: center;
     }
 </style>
 

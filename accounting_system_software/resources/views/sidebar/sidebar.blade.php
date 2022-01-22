@@ -30,7 +30,7 @@
 
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
-<span class="nk-menu-icon"><em class="icon ni ni-dashlite"></em></span>
+<span class="nk-menu-icon"><em class="fas fa-chart-line"></em></span>
 <span class="nk-menu-text">Dashboard</span>
 </a>
 <ul class="nk-menu-sub">
@@ -43,7 +43,7 @@
 
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
-<span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+<span class="nk-menu-icon"><em class="fas fa-user-cog"></em></span>
 <span class="nk-menu-text">User Setup</span>
 </a>
 <ul class="nk-menu-sub">
@@ -56,7 +56,7 @@
 
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
-<span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+<span class="nk-menu-icon"><em class="fas fa-tools"></em></span>
 <span class="nk-menu-text">Initial Setup</span>
 </a>
 <ul class="nk-menu-sub">
@@ -75,23 +75,20 @@
 
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
-<span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+<span class="nk-menu-icon"><em class="fas fa-sitemap"></em></span>
 <span class="nk-menu-text">Company Setting</span>
 </a>
 <ul class="nk-menu-sub">
 <li class="nk-menu-item">
 <a href="ac" class="nk-menu-link"><span class="nk-menu-text">Company Information</span></a>
 </li>
-<!-- <li class="nk-menu-item">
-<a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Change Logo</span></a>
-</li> -->
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
 
 
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
-<span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+<span class="nk-menu-icon"><em class="fas fa-dollar-sign"></em></span>
 <span class="nk-menu-text">Ledger Setup</span>
 </a>
 <ul class="nk-menu-sub">
@@ -113,7 +110,7 @@
 
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
-<span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
+<span class="nk-menu-icon"><em  class="fas fa-balance-scale-right"></em></span>
 <span class="nk-menu-text">Budget Option</span>
 </a>
 <ul class="nk-menu-sub">
