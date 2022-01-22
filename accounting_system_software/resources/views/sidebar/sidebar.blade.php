@@ -23,11 +23,6 @@
 <div class="nk-sidebar-content">
 <div class="nk-sidebar-menu" data-simplebar>
 <ul class="nk-menu">
-<!-- <li class="nk-menu-heading">
-<h6 class="overline-title text-primary-alt">Dashboard</h6>
-</li> --><!-- .nk-menu-item -->
-
-
 <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
 <span class="nk-menu-icon"><em class="fas fa-chart-line"></em></span>
