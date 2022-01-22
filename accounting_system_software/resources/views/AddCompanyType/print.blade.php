@@ -1,3 +1,4 @@
+<body onload="window.print()">
 <table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;" >
 <thead>
 <tr>
@@ -17,3 +18,4 @@ foreach($qr as $row){?>
 <?php }?>
 </tbody>
 </table>
+</body>

@@ -7,8 +7,6 @@
 <th>Date</th>
 <th>Head Name</th>
 <th>Company Name</th>
-<th>Debit</th>
-<th>Credit</th>
 <th>Check No</th>
 <th>Status</th>
 </tr>
@@ -24,8 +22,6 @@ foreach($qr as $row){?>
 <td><?php echo $row['voucher_date']?></td>
 <td><?php echo $row['postling_head_id']?></td>
 <td><?php echo $row['company_id']?></td>
-<td><?php echo $row['debit_amount']?></td>
-<td><?php echo $row['credit_amount']?></td>
 <td><?php echo $row['check_no']?></td>
 <td><?php echo $row['voucher_status']?></td>
 </tr>

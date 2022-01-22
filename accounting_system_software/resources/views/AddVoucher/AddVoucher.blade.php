@@ -24,8 +24,6 @@
 <th>Date</th>
 <th>Head Name</th>
 <th>Company Name</th>
-<th>Debit</th>
-<th>Credit</th>
 <th>Check No</th>
 <th>Status</th>
 <th>Action</th>
@@ -42,8 +40,6 @@ foreach($qr as $row){?>
 <td><?php echo $row['voucher_date']?></td>
 <td><?php echo $row['postling_head_id']?></td>
 <td><?php echo $row['company_id']?></td>
-<td><?php echo $row['debit_amount']?></td>
-<td><?php echo $row['credit_amount']?></td>
 <td><?php echo $row['check_no']?></td>
 <td><?php echo $row['voucher_status']?></td>
 <td>
@@ -160,13 +156,8 @@ foreach($qr as $row){?>
                   <div class="row">
                       <div class="col-md-6">
                            <label>User Name</label>
-                           <select class="form-control" name="user_id" id="user_id" onkeyup="validation(id)" onchange="validation(id)" >
-                              <option value="select">Please select your user name</option>
-                              @foreach($un as $UN)
-                              <option value="{{$UN->user_name}}">{{$UN->user_name}}</option>
-                              @endforeach
-                           </select>
-                           <label id="user_id_error" style="color:red"></label>
+                           <input type="text" class="form-control" name="user_id" id="user_id" readonly value="{{Session::get('sess_name')}}" >
+                              
                       </div>
                       <div class="col-md-6">
                            <label>Checkno</label>
@@ -195,8 +186,7 @@ foreach($qr as $row){?>
                   <div class="row">
                       <div class="col-md-6">
                            <label>Prepare By</label>
-                           <input type="text" class="form-control" name="prepared_by" id="prepared_by" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="prepared_by_error" style="color:red"></label>
+                           <input type="text" class="form-control" name="prepared_by" id="prepared_by" readonly value="{{Session::get('sess_name')}}">
                            <input type="hidden" class="form-control" name="voucher_date" id="voucher_date" onkeyup="validation(id)" onchange="validation(id)" value="{{date('Y-m-d')}}" />
                       </div>
                   </div>

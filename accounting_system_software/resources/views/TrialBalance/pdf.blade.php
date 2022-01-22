@@ -1,53 +1,54 @@
-<table class="myTable" cellpadding="0" cellspacing="0" border="2px" style="text-align:center;">
-								    <thead>
-								        <tr>
-								            <th colspan="3"><h3 style="background: #f6f1f1;padding: 5px;text-align: center;">Trial Balance Of Accounting Software on <?php echo date("d-M-Y");?></h3></th>
-								        </tr>
+<table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;" >
+    <thead>
+        
+    	<tr>
+            <th colspan="3"><h3 style="background: #f6f1f1;padding: 5px;text-align: center;">Trial Balance Of Accounting Software on <?php echo date("d-M-Y");?></h3></th>
+        </tr>
 
-								        <tr>
-								            <th>Particulars</th>
-								            <th>Amount(Debit)</th>
-								            <th>Amount(Credit)</th>
-								        </tr>
-								        <?php 
+        <tr>
+            <th>Particulars</th>
+            <th>Amount(Debit)</th>
+            <th>Amount(Credit)</th>
+        </tr>
+       
+    </thead>
+    <tbody>
 
-								        	$crTotal = 0;
-								        	$drTotal = 0;
+        <?php 
 
-								        ?>
-								        @foreach($trialData as $trial)
-								        <tr>
-								            <th>{{$trial->postling_head_id}}</th>
+        	$crTotal = 0;
+        	$drTotal = 0;
 
-								            <th>
-								            <?php
-								            	$drTotal += $trial->debit_amount;
-								            	echo $trial->debit_amount;
-								        	?>
-								            </th>
+        ?>
+        @foreach($trialData as $trial)
+        <tr>
+            <th>{{$trial->postling_head_id}}</th>
 
-								         <th>
-								         	<?php
-								            	$crTotal += $trial->credit_amount;
-								            	echo $trial->credit_amount;
-								        	?>
-								        </th>
+            <th>
+            <?php
+            	$drTotal += $trial->debit_amount;
+            	echo $trial->debit_amount;
+        	?>
+            </th>
 
-								        </tr>
-								        @endforeach
+         <th>
+         	<?php
+            	$crTotal += $trial->credit_amount;
+            	echo $trial->credit_amount;
+        	?>
+        </th>
 
-								        <tr>
-								            <th>Total</th>
+        </tr>
+        @endforeach
 
-								            <th>{{$drTotal}}</th>
+        <tr>
+            <th>Total</th>
 
-								            <th>{{$crTotal}}</th>
-								            
-								        </tr>
+            <th>{{$drTotal}}</th>
 
-								        <tr>
-								    </thead>
-								    <tbody>
-								    </tbody>
-								</table>
+            <th>{{$crTotal}}</th>
+            
+        </tr>
+    </tbody>
+</table>
 						       

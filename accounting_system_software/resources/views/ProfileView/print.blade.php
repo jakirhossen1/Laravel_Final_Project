@@ -1,4 +1,5 @@
-<table border="2px" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;">
+<body onload="window.print()">
+<table border="2px" cellspacing="0" cellpadding="0"  width="100%" style="text-align: center;">
 	<thead>
 		<tr>
 			<th>Profile Picture:-</th>
@@ -38,7 +39,7 @@
 	</tbody>
 	
 </table>
-
+</body>
 
 <!-- <div class="row">
 						<div class="col-md-3">

@@ -144,26 +144,32 @@
 <span class="nk-menu-text">Reports</span>
 </a>
 <ul class="nk-menu-sub">
-<li class="nk-menu-item">
+	
+<!-- <li class="nk-menu-item">
 <a href="dr" class="nk-menu-link"><span class="nk-menu-text">Date Wise Reports</span></a>
-</li>
-<li class="nk-menu-item">
+</li> -->
+
+<!-- <li class="nk-menu-item">
 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Account Wise Balance</span></a>
-</li>
+</li> -->
+
 <li class="nk-menu-item">
 <a href="tb" class="nk-menu-link"><span class="nk-menu-text">Trial Balance</span></a>
 </li>
-<li class="nk-menu-item">
+
+<!-- <li class="nk-menu-item">
 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Earn Spend Report</span></a>
-</li>
-<li class="nk-menu-item">
+</li> -->
+
+<!-- <li class="nk-menu-item">
 <a href="html/invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Balance Sheet</span></a>
-</li>
+</li> -->
+
 </ul><!-- .nk-menu-sub -->
 </li><!-- .nk-menu-item -->
 
 
-<li class="nk-menu-item has-sub">
+<!-- <li class="nk-menu-item has-sub">
 <a href="#" class="nk-menu-link nk-menu-toggle">
 <span class="nk-menu-icon"><em class="icon ni ni-users"></em></span>
 <span class="nk-menu-text">Logs</span>
@@ -172,8 +178,10 @@
 <li class="nk-menu-item">
 <a href="html/user-list-regular.html" class="nk-menu-link"><span class="nk-menu-text">Login Information</span></a>
 </li>
-</ul><!-- .nk-menu-sub -->
-</li><!-- .nk-menu-item -->
+</ul> -->
+<!-- .nk-menu-sub -->
+<!-- </li> -->
+<!-- .nk-menu-item -->
 
 
 </ul><!-- .nk-menu -->

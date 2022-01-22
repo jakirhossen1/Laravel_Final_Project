@@ -1,6 +1,6 @@
 
 
-<table border="2px" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;">
+<table border="1" cellspacing="0" cellpadding="0" class="datatable-init nowrap table" width="100%" style="text-align: center;" >
 	<thead>
 		<tr>
 			<th>Profile Picture:-</th>
