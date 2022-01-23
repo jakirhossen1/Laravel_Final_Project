@@ -98,7 +98,7 @@ function login(){
            success:function(data){
                var dat=$.parseJSON(data);
                if(dat.res==1){
-                   window.location.assign('us');
+                   window.location.assign('dashboard');
                }else if(dat.res==2){
             $('#email_error').html("You enter wrong email address");
             $('#email').css('border-color','red');
