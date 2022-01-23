@@ -24,18 +24,25 @@ public function authentiation(Request $request){
     $user_name=$request->email;
     $user_pass=$request->password;
     $token=$request->_token;
+
     $unique_user= LoginModel::where('email','=',$user_name)
                              ->orWhere('phone','=',$user_name)
+                             ->orWhere('user_name','=',$user_name)
                              ->count();
     
-    $unique_pass= LoginModel::where('email','=',$user_name)
-                             ->orWhere('phone','=',$user_name)
-                             ->where('password',$user_pass)
-                             ->count();
-    $result= LoginModel::where('email','=',$user_name)
-                             ->orWhere('phone','=',$user_name)
-                             ->where('password',$user_pass)
-                             ->first();
+    $unique_pass= LoginModel::where('password', $user_pass)
+                             ->where(function($query) use ($user_name){
+                                $query->where('email','=',$user_name)
+                                     ->orWhere('phone','=',$user_name)
+                                     ->orWhere('user_name','=',$user_name);
+                             })->count();
+
+    $result= LoginModel::where('password', $user_pass)->where(function($query) 
+                            use ($user_name){
+                                $query->where('email','=',$user_name)
+                                     ->orWhere('phone','=',$user_name)
+                                     ->orWhere('user_name','=',$user_name);
+                             })->first();
     
     if($unique_user==1 && $unique_pass==1){
         $result_id=$result->user_id;

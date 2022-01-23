@@ -33,6 +33,7 @@ use App\Http\Controllers\DasboardController;
 */
 
 Route::get('/',[DasboardController::class,'dasboard'])->name('dasboard');
+Route::get('dashboard',[DasboardController::class,'dasboard']);
 
 
 Route::get('tb',[TrialBalanceController::class,'viewd']);
