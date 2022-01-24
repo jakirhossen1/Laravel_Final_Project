@@ -2,155 +2,133 @@
 
 <!-- content @s -->
 <div class="nk-content ">
-<div class="container-fluid">
-<div class="nk-content-inner">
-<div class="nk-content-body">
-<div class="components-preview wide-md mx-auto">
+  <div class="container-fluid">
+    <div class="nk-content-inner">
+      <div class="nk-content-body">
+        <div class="components-preview wide-md mx-auto">
+          <div class="nk-block nk-block-lg">
+            <div class="card card-preview">
+              <div class="card-inner">
+                <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add User</a>
+                <a href="us_pdf" class="btn btn-danger">PDF</a>
+                <a href="us_print" class="btn btn-success">Print</a>
+                <p></p>
+                <table class="datatable-init nowrap table-sm table-responsive" style="text-align: center;" >
+                  <thead>
+                    <tr>
+                      <th>Sl</th>
 
-<div class="nk-block nk-block-lg">
+                      <th>User Name</th>
+                      <th>Full Name</th>
+                      <th>Email</th>
+                      <th>Phone</th>
+                      <th>Picture</th>
+                      <th>A/C Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-<div class="card card-preview">
-    
-<div class="card-inner">
-    <a href="#" data-toggle="modal" data-target="#add" class="btn btn-primary">Add User</a>
-    <a href="us_pdf" class="btn btn-danger">PDF</a>
-    <a href="us_print" class="btn btn-success">Print</a>
-    <p></p>
-<table class="datatable-init nowrap table-sm table-responsive" style="text-align: center;" >
-<thead>
-<tr>
-<th>Sl</th>
-
-<th>User Name</th>
-<th>Full Name</th>
-<th>Email</th>
-<th>Phone</th>
-<th>Picture</th>
-<th>A/C Date</th>
-<th>Status</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-
-<?php 
-$x=1;
-foreach($qr as $row){?>
-<tr>
-<td><?php echo $x++;?></td>
-
-<td><?php echo $row['user_name']?></td>
-<td><?php echo $row['full_name']?></td>
-<td><?php echo $row['email']?></td>
-<td><?php echo $row['phone']?></td>
-<td><img style="height: 40px; width: 40px;" src="<?php echo URL('/').'/'.$row['picture']?>" class="img-thumbnail" /></td>
-<td><?php echo $row['account_creation_date']?></td>
-<td><?php echo $row['status']?></td>
-<td>
-    <a style="color:#fff;" data-toggle="modal" data-target="#deleteid" onclick="delid(<?php echo $row['user_id']?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
-    <a style="color:#fff;" data-toggle="modal" data-target="#updateid" onclick="upid('<?php echo $row['user_id']?>')" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-    
-</td>
-</tr>
-<?php }?>
-</tbody>
-</table>
-</div>
-</div><!-- .card-preview -->
-</div> <!-- nk-block -->
-
-
-</div><!-- .components-preview -->
-</div>
-</div>
-</div>
+                  <?php 
+                  $x=1;
+                  foreach($qr as $row){?>
+                    <tr>
+                      <td><?php echo $x++;?></td>
+                      <td><?php echo $row['user_name']?></td>
+                      <td><?php echo $row['full_name']?></td>
+                      <td><?php echo $row['email']?></td>
+                      <td><?php echo $row['phone']?></td>
+                      <td><img style="height: 40px; width: 40px;" src="<?php echo URL('/').'/'.$row['picture']?>" class="img-thumbnail" /></td>
+                      <td><?php echo $row['account_creation_date']?></td>
+                      <td><?php echo $row['status']?></td>
+                      <td>
+                          <a style="color:#fff;" data-toggle="modal" data-target="#deleteid" onclick="delid(<?php echo $row['user_id']?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                          <a style="color:#fff;" data-toggle="modal" data-target="#updateid" onclick="upid('<?php echo $row['user_id']?>')" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                          
+                      </td>
+                    </tr>
+                  <?php }?>
+                  </tbody>
+                </table>
+              </div>
+            </div><!-- .card-preview -->
+          </div> <!-- nk-block -->
+        </div><!-- .components-preview -->
+      </div>
+    </div>
+  </div>
 </div>
 <!-- content @e -->
 <!-- Add Modal-->
 
 <div id="add" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-        
-        <div class="modal-content">
-        <div class="modal-header">
-            <h4>Add Users</h4>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-          <div class="modal-body">
-              <form   id="save" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="_token" id="_token" value="{{ csrf_token()}}">
-                  <div class="row">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Add Users</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form   id="save" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="_token" id="_token" value="{{ csrf_token()}}">
+              <div class="row">
+                <div class="col-md-6">
+                  <label>User Name</label>
+                  <input type="text" class="form-control" name="user_name" id="user_name" onkeyup="validation(id)" onchange="validation(id)" />
+                  <label id="user_name_error" style="color:red"></label>
+                </div>
 
-                      <div class="col-md-6">
-                           <label>User Name</label>
-                           <input type="text" class="form-control" name="user_name" id="user_name" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="user_name_error" style="color:red"></label>
-                      </div>
-
-                      <div class="col-md-6">
-                           <label>Full Name</label>
-                           <input type="text" class="form-control" name="full_name" id="full_name" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="full_name_error" style="color:red"></label>
-                      </div>
-                  </div>
-                   <div class="row">
-
-                     <div class="col-md-6">
-                           <label>Email</label>
-                           <input type="text" class="form-control" name="email" id="email" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="email_error" style="color:red"></label>
-                      </div>
-
-                     <div class="col-md-6">
-                           <label>Password</label>
-                           <input type="password" class="form-control" name="password" id="password" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="password_error" style="color:red"></label>
-                      </div>
-              
-                  </div>
-
-                  <div class="row">
-
-                        <div class="col-md-6">
-                           <label>Phone</label>
-                           <input type="text" class="form-control" name="phone" id="phone" onkeyup="validation(id)" onchange="validation(id)" />
-                           <label id="phone_error" style="color:red"></label>
-                        </div>
-                        <div class="col-md-6">
-                            <label>Picture</label>
-                            <input type="file" class="form-control-file" name="picture"/>
-                        </div>
-                  </div>
-
-                  <div class="row">
-
-                     <div class="col-md-6">
-                        <label>Status</label>
-                           <select class="form-control" name="status" id="status" onkeyup="validation(id)" onchange="validation(id)">
-                               <option value="Select">Please select your status</option>
-                               <option value="Active">Active</option>
-                               <option value="Inactive">Inactive</option>
-                           </select>
-                           <label id="status_error" style="color:red"></label>
-                           <input type="hidden" class="form-control" name="account_creation_date" id="account_creation_date" onkeyup="validation(id)" onchange="validation(id)" value="{{date('Y-m-d')}}" />
-                           <label id="account_creation_date_error" style="color:red"></label>
-                      </div>
-
-                     <div class="col-md-6">
-                           
-                      </div>
-              
-                  </div>
-                  
-        </div>  
-           <div class="modal-footer">
-               <button class="btn btn-success" type="button" onclick="save()">Save</button>
-            <button class="btn btn-danger" class="close" data-dismiss="modal">Cancel</button>
-            
-            </div> 
-        </form>
+                <div class="col-md-6">
+                     <label>Full Name</label>
+                     <input type="text" class="form-control" name="full_name" id="full_name" onkeyup="validation(id)" onchange="validation(id)" />
+                     <label id="full_name_error" style="color:red"></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Email</label>
+                  <input type="text" class="form-control" name="email" id="email" onkeyup="validation(id)" onchange="validation(id)" />
+                  <label id="email_error" style="color:red"></label>
+                </div>
+                <div class="col-md-6">
+                  <label>Password</label>
+                  <input type="password" class="form-control" name="password" id="password" onkeyup="validation(id)" onchange="validation(id)" />
+                  <label id="password_error" style="color:red"></label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Phone</label>
+                  <input type="text" class="form-control" name="phone" id="phone" onkeyup="validation(id)" onchange="validation(id)" />
+                  <label id="phone_error" style="color:red"></label>
+                </div>
+                <div class="col-md-6">
+                  <label>Picture</label>
+                  <input type="file" class="form-control-file" name="picture"/>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <label>Status</label>
+                  <select class="form-control" name="status" id="status" onkeyup="validation(id)" onchange="validation(id)">
+                    <option value="Select">Please select your status</option>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                  </select>
+                  <label id="status_error" style="color:red"></label>
+                  <input type="hidden" class="form-control" name="account_creation_date" id="account_creation_date" onkeyup="validation(id)" onchange="validation(id)" value="{{date('Y-m-d')}}" />
+                  <label id="account_creation_date_error" style="color:red"></label>
+                </div>
+              </div>
+      </div>  
+      <div class="modal-footer">
+        <button class="btn btn-success" type="button" onclick="save()">Save</button>
+        <button class="btn btn-danger" class="close" data-dismiss="modal">Cancel</button>
+      </div> 
+      </form>
     </div>
-    </div>
+  </div>
 </div>
 
 <!-- Add Modal End-->
@@ -159,7 +137,7 @@ foreach($qr as $row){?>
 
 <div id="deleteid" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
-        
+
         <div class="modal-content">
         <div class="modal-header">
             <h4>Do you Want to delete data?</h4>
